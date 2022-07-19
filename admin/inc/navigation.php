@@ -131,6 +131,14 @@
                         </p>
                       </a>
                     </li> 
+                    <li class="nav-item dropdown">
+                      <a href="./?page=history" class="nav-link nav-history">
+                        <i class="nav-icon fas fa-clipboard-list"></i>
+                        <p>
+                          history
+                        </p>
+                      </a>
+                    </li> 
 
                     <!-- ini batesnya-->
 
