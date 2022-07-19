@@ -93,7 +93,7 @@
 			uni_modal("<i class='fa fa-edit'></i> Add New Jenispembayaran ","jenispembayaran/manage_jenispembayaran.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Jenispembayaran Details ","categories/view_jenispembayaran.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> Jenis pembayaran Details ","jenispembayaran/view_jenispembayaran.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [

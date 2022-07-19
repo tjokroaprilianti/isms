@@ -1,16 +1,16 @@
 <?php
 require_once('./../../config.php');
 if(isset($_GET['id']) && $_GET['id'] > 0){
-    $qry = $conn->query("SELECT * from `category_list` where id = '{$_GET['id']}' and delete_flag = 0 ");
+    $qry = $conn->query("SELECT * from `penanggungjawab_list` where id = '{$_GET['id']}' and delete_flag = 0 ");
     if($qry->num_rows > 0){
         foreach($qry->fetch_assoc() as $k => $v){
             $$k=$v;
         }
     }else{
-		echo '<script>alert("category ID is not valid."); location.replace("./?page=categoryes")</script>';
+		echo '<script>alert("penanggungjawab ID is not valid."); location.replace("./?page=penanggungjawab")</script>';
 	}
 }else{
-	echo '<script>alert("category ID is Required."); location.replace("./?page=categoryes")</script>';
+	echo '<script>alert("penanggungjawab ID is Required."); location.replace("./?page=penanggungjawab")</script>';
 }
 ?>
 <style>

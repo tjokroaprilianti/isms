@@ -25,19 +25,19 @@
 					<col width="100%">
 					<col width="100%">
 					<col width="100%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="25%">
-					<col width="35%">
-					<col width="10%">
-					<col width="10%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100px">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
 				</colgroup>
 				<thead>
 					<tr>
@@ -58,36 +58,32 @@
 						<th scope="col">Upload Kontrak</th>
 						<th scope="col">Nama PIC</th>
 						<th scope="col">Action</th>
+						<th scope="col">Status Kontrak</th>
+						
 					</tr>
 				</thead>
 				<tbody>
 					<?php 
 					$i = 1;
 						/*$qry = $conn->query("SELECT i.*, c.name as `cost_center_list``cost_unit_list``nama_pelanggan_list``jenis_pembayaran_list` `penanggungjawab_list``status_progres_list`from `project_list` i inner join project_list c on i.project_list_id = c.id where i.delete_flag = 0 order by i.`name` asc ");*/
-						$qry = $conn->query("SELECT i.*, i.id as id_projectlist, c.*, d.*, c.name as `cost_center`, d.name as `cost_unit` , e.name as nama_pelanggan , f.name as jenis_pembayaran , g.name as penanggungjawab , h.name as status_progres,  i.tanggal_mulai as tanggal_mulai_project, h.name as name_progress 
+						$qry = $conn->query("SELECT i.*, i.id as id_projectlist, c.*, d.*, c.name as `cost_center`, d.name as `cost_unit` , e.name as nama_pelanggan , f.name as jenis_pembayaran , g.name as penanggungjawab ,  i.tanggal_mulai as tanggal_mulai_project , h.name as status_progres
 							from `project_list` i 
 							join cost_center_list c on i.cost_center_id = c.id 
 							join cost_unit_list d on i.cost_unit_id = d.id 
 							join nama_pelanggan_list e on i.nama_pelanggan_id = e.id 
 							join jenis_pembayaran_list f on i.jenis_pembayaran_id = f.id 
-							join penanggungjawab_list g on i.penanggungjawab_id = g.id 
-							join status_progres_list h on i.id = h.kode 
-							/*AND h.id = (
-						            SELECT MAX(m2.id) 
-						            FROM status_progres_list m2
-						            WHERE m2.kode = conversations.id
-						        )*/
-							IN (SELECT h.id 
-								  FROM status_progres_list h
-								  where i.id = h.kode
-								  ORDER BY h.id DESC LIMIT 1
-								 )
+							join penanggungjawab_list g on i.penanggungjawab_id = g.id
+							join status_progres_list h on h.id = i.status_progres_id
 							
 							order by `id_projectlist` asc");
+						$qry2 = $conn->query("SELECT * from status_progres_list
+
+						 Order by  `id` DESC LIMIT 1 ");
+						//join project_list h on h.id=
 						while($row = $qry->fetch_assoc()):
 					?>
-						<tr>
-
+					<tr>
+					
 							<td class="">
 								<div style="line-height:1em">
 									<div><?= $row['id_projectlist'] ?> </div>
@@ -128,13 +124,35 @@
 									
 								</div>
 							</td>
-							<td class="">
-								<div style="line-height:1em">
-									<div><?= $row['name_progress'] ?> </div>
+							<?php
+							/*$rowcount=mysqli_num_rows($qry2);
+							$name_progres="";
+							if($rowcount > 0){
+										
 									
-								</div>
-							</td>
-
+									while($row2 = $qry2->fetch_assoc()):
+									
+									
+										$name_progres=$row2['name'];
+									endwhile; 
+									}if($rowcount == 0){
+										$name_progres = "-";
+									}*/
+							?>
+								
+								<!-- <td class="">
+									<div style="line-height:1em">
+										<div><?= $name_progres ?> </div>
+										
+									</div>
+								</td> -->
+								<td class="">
+									<div style="line-height:1em">
+										<div><?= $row['status_progres'] ?> </div>
+										
+									</div>
+								</td>
+							
 
 							
 							<td class="text-center">
@@ -166,12 +184,7 @@
 									
 								</div>
 							</td>
-							<td class="">
-								<div style="line-height:1em">
-									<div><?= $row['upload_kontrak'] ?> </div>
-									
-								</div>
-							</td>
+							
 
 
 							<!-- <td class="text-center"><?php //echo $i++; ?></td> -->
@@ -182,6 +195,13 @@
 
 							<!-- <td class="text-center"><?php //echo $i++; ?></td> -->
 							<td><?php echo date("Y-m-d H:i",strtotime($row['tanggal_tanda_tangan'])) ?></td>
+
+							<td class="">
+								<div style="line-height:1em">
+									<div><?= $row['upload_kontrak'] ?> </div>
+									
+								</div>
+							</td>
 
 							<td class="">
 								<div style="line-height:1em">
@@ -207,6 +227,42 @@
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
 							</td>
+							<td>
+								<?php
+									if($row['id_projectlist']>= 1){
+										$status_selesai = "selesai";
+										?>
+										<svg height="100" width="100">
+										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="green" />
+										</svg>
+										<?php
+									}
+									elseif($row['id_projectlist']==19){
+										$status_selesai = "PROGRESS";
+										?>
+										<svg height="100" width="100">
+										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="yellow" />
+										</svg>
+										<?php
+									}
+									elseif($row['id_projectlist']==20){
+										$status_selesai = "PROGRESS";
+										?>
+										<svg height="100" width="100">
+										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
+										</svg>
+										<?php
+									}else {
+										$status_selesai = "PROGRESS";
+										?>
+										
+										
+										<?php
+									}
+								?>
+								
+								
+							</td>
 						</tr>
 					<?php endwhile; ?>
 				</tbody>
@@ -217,7 +273,7 @@
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this Item permanently?","delete_item",[$(this).attr('data-id')])
+			_conf("Are you sure to delete this Item permanently?","delete_projectlist",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
 			uni_modal("<i class='far fa-plus-square'></i> Add New Item ","projectlist/manage_projectlist.php")
@@ -226,7 +282,7 @@
 			uni_modal("<i class='fa fa-edit'></i> Add New Item ","projectlist/manage_projectlist.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Item Details ","projectlist/view_projectlist.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> Project  Details ","projectlist/view_projectlist.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [

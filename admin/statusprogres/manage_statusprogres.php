@@ -14,7 +14,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group">
 			<label for="kode" class="control-label">Kode Project</label>
-			<select name="kode" id="kode" class="form-control form-control-sm rounded-0" required="required">
+			<!-- <select name="kode" id="kode" class="form-control form-control-sm rounded-0" required="required">
 				<option value="" <?= isset($kode) ? 'selected' : '' ?>></option>
 				<?php 
 				$items = $conn->query("SELECT * FROM `project_list` where delete_flag = 0 and `status` = 1 ");
@@ -22,8 +22,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				?>
 				<option value="<?= $row['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row['id'] ? 'selected' : '' ?>><?= $row['judul_kontrak'] ?></option>
 				<?php endwhile; ?>
-			</select>
-			<!-- <input type="text" name="kode" id="kode" class="form-control form-control-sm rounded-0" value="<?php echo isset($kode) ? $kode : ''; ?>"  required/> -->
+			</select> -->
+			<input type="text" name="kode" id="kode" class="form-control form-control-sm rounded-0" value="<?php echo isset($kode) ? $kode : ''; ?>"  required/>
 		</div>
 		<div class="form-group">
 			<label for="name" class="control-label">Nama</label>

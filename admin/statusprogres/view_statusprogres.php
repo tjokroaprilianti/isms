@@ -20,10 +20,18 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 </style>
 <div class="container-fluid">
 	<dl>
+		<dt class="text-muted">Id</dt>
+		<dd class="pl-4"><?= isset($id) ? $id : "" ?></dd>
+		<dt class="text-muted">kode</dt>
+		<dd class="pl-4"><?= isset($kode) ? $kode : "" ?></dd>
 		<dt class="text-muted">Name</dt>
 		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
-		<dt class="text-muted">Description</dt>
-		<dd class="pl-4"><?= isset($description) ? str_replace(["\n\r", "\n", "\r"],"<br>", htmlspecialchars_decode($description)) : '' ?></dd>
+		<dt class="text-muted">Date Created</dt>
+		<dd class="pl-4"><?= isset($date_created) ? $date_created : "" ?></dd>
+		<dt class="text-muted">Date Updated</dt>
+		<dd class="pl-4"><?= isset($date_updated) ? $date_updated : "" ?></dd>
+		<!-- <dt class="text-muted">Description</dt>
+		<dd class="pl-4"><?= isset($description) ? str_replace(["\n\r", "\n", "\r"],"<br>", htmlspecialchars_decode($description)) : '' ?></dd> -->
 		<dt class="text-muted">Status</dt>
 		<dd class="pl-4">
 			<?php if($status == 1): ?>

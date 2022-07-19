@@ -21,10 +21,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 <div class="container-fluid">
 	<dl>
 		<dt class="text-muted">Cost Center</dt>
-		<dd class="pl-4"><?= isset($costcenter) ? $costcenter : "" ?></dd>
+		<dd class="pl-4"><?= isset($cost_center_list) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Cost Unit</dt>
-		<dd class="pl-4"><?= isset($costunit) ? $costunit : "" ?></dd>
+		<dd class="pl-4"><?= isset($cost_unit) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Nama Pelanggan</dt>
 		<dd class="pl-4"><?= isset($namapelanggan) ? $namapelanggan : "" ?></dd>
@@ -48,7 +48,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</dd>
 
 		<dt class="text-muted">Judul Kontrak</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($judulkontrak) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Nilai Kontrak</dt>
 		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>

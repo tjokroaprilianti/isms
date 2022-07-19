@@ -93,7 +93,7 @@
 			uni_modal("<i class='fa fa-edit'></i> Add New Namapelanggan ","namapelanggan/manage_namapelanggan.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Namapelanggan Details ","namapelanggan/view_namapelanggan.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> Nama pelanggan Details ","namapelanggan/view_namapelanggan.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [
