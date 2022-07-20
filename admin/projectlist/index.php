@@ -1,3 +1,4 @@
+
 <?php if($_settings->chk_flashdata('success')): ?>
 <script>
 	alert_toast("<?php echo $_settings->flashdata('success') ?>",'success')
@@ -33,7 +34,7 @@
 					<col width="100%">
 					<col width="100%">
 					<col width="100%">
-					<col width="100px">
+					<col width="100%">
 					<col width="100%">
 					<col width="100%">
 					<col width="100%">
