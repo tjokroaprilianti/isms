@@ -1,7 +1,11 @@
 <?php
 require_once('./../../config.php');
 if(isset($_GET['id']) && $_GET['id'] > 0){
-    $qry = $conn->query("SELECT * from `item_list` where id = '{$_GET['id']}' and `delete_flag` = 0 ");
+
+    /*$qry = $conn->query("SELECT * from `item_list` where id = '{$_GET['id']}' and `delete_flag` = 0 ");
+*/
+    $qry = $conn->query("SELECT * from `cost_unit_list` where id = '{$_GET['id']}' and `delete_flag` = 0 ");
+
     if($qry->num_rows > 0){
         foreach($qry->fetch_assoc() as $k => $v){
             $$k=$v;
@@ -10,6 +14,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 }
 ?>
 <div class="container-fluid">
+
 	<form action="" id="history-form">
 		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group">
@@ -50,6 +55,17 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<div class="form-group">
 			<label for="description" class="control-label">Description</label>
 			<textarea rows="3" name="description" id="description" class="form-control form-control-sm rounded-0" required><?php echo isset($description) ? $description : ''; ?></textarea>
+
+	<form action="" id="costunit-form">
+		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
+		<div class="form-group">
+			<label for="kode" class="control-label">Kode</label>
+			<input type="text" name="kode" id="kode" class="form-control form-control-sm rounded-0" value="<?php echo isset($kode) ? $kode : ''; ?>"  required/>
+		</div>
+		<div class="form-group">
+			<label for="name" class="control-label">Nama</label>
+			<textarea rows="3" name="name" id="name" class="form-control form-control-sm rounded-0" required><?php echo isset($name) ? $name : ''; ?></textarea>
+
 		</div>
 		<div class="form-group">
 			<label for="status" class="control-label">Status</label>
@@ -62,6 +78,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 </div>
 <script>
 	$(document).ready(function(){
+
 		$('#uni_modal').on('shown.bs.modal', function(){
 			$('#category_id').select2({
 				placeholder:"Select Category Here",
@@ -71,12 +88,19 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			})
 		})
 		$('#item-form').submit(function(e){
+
+		$('#costunit-form').submit(function(e){
+
 			e.preventDefault();
             var _this = $(this)
 			 $('.err-msg').remove();
 			start_loader();
 			$.ajax({
+
 				url:_base_url_+"classes/Master.php?f=save_item",
+
+				url:_base_url_+"classes/Master.php?f=save_costunit",
+
 				data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,
@@ -93,7 +117,11 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 					if(typeof resp =='object' && resp.status == 'success'){
 						// location.reload()
 						alert_toast(resp.msg, 'success')
+
 						uni_modal("<i class='fa fa-th-list'></i> item Details ","items/view_item.php?id="+resp.iid)
+
+						uni_modal("<i class='fa fa-th-list'></i> Costunit Details ","costunit/view_costunit.php?id="+resp.cid)
+
 						$('#uni_modal').on('hide.bs.modal', function(){
 							location.reload()
 						})
