@@ -481,11 +481,14 @@ Class Master extends DBConnection {
 		}
 		if(empty($id)){
 			$sql = "INSERT INTO `project_list` set {$data} ";
+			$sql2 = "INSERT INTO `history` set {$data} ";
 		}else{
 			$sql = "UPDATE `project_list` set {$data} where id = '{$id}' ";
+			$sql2 = "INSERT INTO `history` set {$data} ";
 		}
 			$save = $this->conn->query($sql);
-		if($save){
+			$save2 = $this->conn->query($sql2);
+		if($save && $save2){
 			$id = !empty($id) ? $id : $this->conn->insert_id;
 			
 			$resp['id'] = $id;
