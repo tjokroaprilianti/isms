@@ -19,16 +19,31 @@
 		</div> -->
 	</div>
 	<div class="card-body">
-        <div class="container-fluid">
+        <div class="table-responsive">
 			<table class="table table-hover table-striped table-bordered" id="list">
 				<colgroup>
-					<col width="5%">
-					<col width="15%">
-					<col width="25%">
-					<col width="35%">
-					<col width="35%">
-					<col width="10%">
-					<col width="10%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
+					<col width="100%">
 				</colgroup>
 				<thead>
 					<tr>
@@ -55,7 +70,6 @@
 						<th>nama progres</th>
 						<th>status progres</th>
 						<th>delete flag progres</th>
-						
 					</tr>
 				</thead>
 				<tbody>

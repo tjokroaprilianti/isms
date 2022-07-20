@@ -43,23 +43,23 @@
 				<thead>
 					<tr>
 						<th scope="col"> id</th>
-						<th scope="col">Cost Center</th>
-						<th scope="col">Cost Unit</th>
-						<th scope="col">Nama Pelanggan</th>
-						<th>Jenis Pembayaran</th>
-						<th>Penanggung Jawab</th>
-						<th scope="col">Status Progres</th>
-						<th scope="col">Status</th>
-						<th scope="col">Judul Kontrak</th>
-						<th scope="col">Nilai Kontrak</th>
-						<th scope="col">Nomor Kontrak</th>
-						<th scope="col">Tanggal Mulai</th>
-						<th scope="col">Tanggal Berakhir</th>
-						<th scope="col">Tanggal Tanda Tangan</th>
-						<th scope="col">Upload Kontrak</th>
-						<th scope="col">Nama PIC</th>
-						<th scope="col">Action</th>
-						<th scope="col">Status Kontrak</th>
+						<td align=center>Cost Center</td>
+						<td align=center>Cost Unit</td>
+						<td align=center>Nama Pelanggan</td>
+						<td align=center>Jenis Pembayaran</td>
+						<td align=center>Penanggung Jawab</td>
+						<td align=center>Status Progres</td>
+						<td align=center>Status</td>
+						<td align=center>Judul Kontrak</td>
+						<td align=center>Nilai Kontrak</td>
+						<td align=center>Nomor Kontrak</td>
+						<td align=center>Tanggal Mulai</td>
+						<td align=center>Tanggal Berakhir</td>
+						<td align=center>Tanggal Tanda Tangan</td>
+						<td align=center>Upload Kontrak</td>
+						<td align=center>Nama PIC</td>
+						<td align=center>Action</td>
+						<td align=center>Status Kontrak</td>
 						
 					</tr>
 				</thead>
@@ -230,15 +230,15 @@
 							</td>
 							<td>
 								<?php
-									if($row['id_projectlist']>= 1){
+									if($row['status_progres_id']<6){
 										$status_selesai = "selesai";
 										?>
 										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="green" />
+										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
 										</svg>
 										<?php
 									}
-									elseif($row['id_projectlist']==19){
+									elseif($row['status_progres_id']<11){
 										$status_selesai = "PROGRESS";
 										?>
 										<svg height="100" width="100">
@@ -246,11 +246,11 @@
 										</svg>
 										<?php
 									}
-									elseif($row['id_projectlist']==20){
+									elseif($row['status_progres_id']>10){
 										$status_selesai = "PROGRESS";
 										?>
 										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
+										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="green" />
 										</svg>
 										<?php
 									}else {
