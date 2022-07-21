@@ -461,13 +461,16 @@ Class Master extends DBConnection {
 	function save_projectlist(){
 		extract($_POST);
 		$data = "";
+		
 		foreach($_POST as $k =>$v){
 			if(!in_array($k,array('id'))){
-				if(!empty($data)) $data .=",";
+				if(!empty($data)) $data .=","; 
 				$v = htmlspecialchars($this->conn->real_escape_string($v));
 				$data .= " `{$k}`='{$v}' ";
+				
 			}
 		}
+		
 
 		$check = $this->conn->query("SELECT * FROM `project_list` where `judul_kontrak` = '{$judul_kontrak}' and delete_flag = 0 ".(!empty($id) ? " and id != {$id} " : "")." ")->num_rows;
 		if($this->capture_err())
@@ -481,15 +484,21 @@ Class Master extends DBConnection {
 		}
 		if(empty($id)){
 			$sql = "INSERT INTO `project_list` set {$data} ";
-			$sql2 = "INSERT INTO `history` set {$data} ";
+			//$id_proj = SELECT LAST_INSERT_ID();
+			$id_proj = $this->conn->insert_id;
+			//$data2 .= " `id_project_list`='$id_proj' ";
+			//$sql2 = "INSERT INTO `history` set id_project_list='$id_proj', {$data} ";
 		}else{
 			$sql = "UPDATE `project_list` set {$data} where id = '{$id}' ";
-			$sql2 = "INSERT INTO `history` set {$data} ";
+			//$data2 .= " `id_project_list`='{$id}' ";
+			//$sql2 = "INSERT INTO `history` set id_project_list='{$id}', {$data}  ";
 		}
 			$save = $this->conn->query($sql);
-			$save2 = $this->conn->query($sql2);
-		if($save && $save2){
+			//$save2 = $this->conn->query($sql2);
+		if($save /*&& $save2*/){
 			$id = !empty($id) ? $id : $this->conn->insert_id;
+			$sql2 = "INSERT INTO `history` set id_project_list='$id', {$data} ";
+			$save2 = $this->conn->query($sql2);
 			
 			$resp['id'] = $id;
 			if(!empty($_FILES['upload_kontrak']['tmp_name'])){
