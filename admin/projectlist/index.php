@@ -24,7 +24,7 @@
 			<table class="table table-bordered table-striped table-bordered" id="list">
 				<colgroup>
 					<col width="100%">
-					<col width="100%">
+					<col width="20%">
 					<col width="100%">
 					<col width="100%">
 					<col width="100%">
@@ -43,13 +43,14 @@
 				<thead>
 					<tr>
 						<th scope="col"> id</th>
+						<td align=center>Status Kontrak</td>
 						<td align=center>Cost Center</td>
 						<td align=center>Cost Unit</td>
 						<td align=center>Nama Pelanggan</td>
 						<td align=center>Jenis Pembayaran</td>
 						<td align=center>Penanggung Jawab</td>
 						<td align=center>Status Progres</td>
-						<td align=center>Status</td>
+						
 						<td align=center>Judul Kontrak</td>
 						<td align=center>Nilai Kontrak</td>
 						<td align=center>Nomor Kontrak</td>
@@ -58,8 +59,9 @@
 						<td align=center>Tanggal Tanda Tangan</td>
 						<td align=center>Upload Kontrak</td>
 						<td align=center>Nama PIC</td>
+						<td align=center>Status</td>
 						<td align=center>Action</td>
-						<td align=center>Status Kontrak</td>
+						
 						
 					</tr>
 				</thead>
@@ -90,7 +92,42 @@
 									<div><?= $row['id_projectlist'] ?> </div>
 								</div>
 							</td>
-							
+							<td class="">
+								<?php
+									if($row['status_progres_id']<6){
+										$status_selesai = "selesai";
+										?>
+										<svg height="100" width="100">
+										  <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="red" />
+										</svg>
+										<?php
+									}
+									elseif($row['status_progres_id']<11){
+										$status_selesai = "PROGRESS";
+										?>
+										<svg height="100" width="100">
+										  <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="yellow" />
+										</svg>
+										<?php
+									}
+									elseif($row['status_progres_id']>10){
+										$status_selesai = "PROGRESS";
+										?>
+										<svg height="100" width="100">
+										  <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="green" />
+										</svg>
+										<?php
+									}else {
+										$status_selesai = "PROGRESS";
+										?>
+										
+										
+										<?php
+									}
+								?>
+								
+								
+							</td>
 							<td class="">
 								<div style="line-height:1em">
 									<div><?= $row['cost_center'] ?> </div>
@@ -156,13 +193,7 @@
 							
 
 							
-							<td class="text-center">
-                                <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success px-3 rounded-pill">Active</span>
-                                <?php else: ?>
-                                    <span class="badge badge-danger px-3 rounded-pill">Inactive</span>
-                                <?php endif; ?>
-                            </td>
+							
 
 
                             <td class="">
@@ -210,7 +241,13 @@
 									
 								</div>
 							</td>
-
+							<td class="text-center">
+                                <?php if($row['status'] == 1): ?>
+                                    <span class="badge badge-success px-3 rounded-pill">Active</span>
+                                <?php else: ?>
+                                    <span class="badge badge-danger px-3 rounded-pill">Inactive</span>
+                                <?php endif; ?>
+                            </td>
 
 							
 
@@ -228,42 +265,7 @@
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
 							</td>
-							<td>
-								<?php
-									if($row['status_progres_id']<6){
-										$status_selesai = "selesai";
-										?>
-										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="red" />
-										</svg>
-										<?php
-									}
-									elseif($row['status_progres_id']<11){
-										$status_selesai = "PROGRESS";
-										?>
-										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="yellow" />
-										</svg>
-										<?php
-									}
-									elseif($row['status_progres_id']>10){
-										$status_selesai = "PROGRESS";
-										?>
-										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="green" />
-										</svg>
-										<?php
-									}else {
-										$status_selesai = "PROGRESS";
-										?>
-										
-										
-										<?php
-									}
-								?>
-								
-								
-							</td>
+							
 						</tr>
 					<?php endwhile; ?>
 				</tbody>
