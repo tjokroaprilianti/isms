@@ -102,7 +102,7 @@
 										</svg>
 										<?php
 									}
-									elseif($row['status_progres_id']<11){
+									elseif($row['status_progres_id']<14){
 										$status_selesai = "PROGRESS";
 										?>
 										<svg height="100" width="100">
@@ -110,7 +110,7 @@
 										</svg>
 										<?php
 									}
-									elseif($row['status_progres_id']>10){
+									elseif($row['status_progres_id']>13){
 										$status_selesai = "PROGRESS";
 										?>
 										<svg height="100" width="100">
@@ -260,7 +260,7 @@
 				                  <div class="dropdown-menu" role="menu">
 				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Update</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>

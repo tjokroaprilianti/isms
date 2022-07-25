@@ -13,7 +13,7 @@
 </style>
 <div class="card card-outline rounded-0 card-teal">
 	<div class="card-header">
-		<h3 class="card-title">List of Jenis Pembayaran</h3>
+		<h3 class="card-title">List of Jenis Kontrak</h3>
 		<div class="card-tools">
 			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
 		</div>

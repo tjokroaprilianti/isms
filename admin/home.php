@@ -15,7 +15,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Project</span>
+        <span class="info-box-text">Contract</span>
         <span class="info-box-number text-right h5">
           <?php 
             $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status` = 1 ")->num_rows;
@@ -37,7 +37,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Status Contract</span>
+        <span class="info-box-text">Status Contract Active</span>
         <span class="info-box-number text-right h5">
           <?php 
             $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status` = 1")->num_rows;
@@ -53,7 +53,68 @@
   <!-- /.col -->
   <!-- Status Contract-->
 
-            <div class="col-md-3">
+  <div class="col-12 col-sm-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Inisiatif</span>
+        <span class="info-box-number text-right h5">
+          <?php 
+            $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status_progres_id`  <6 ")->num_rows;
+            echo format_num($project_list);
+          ?>
+          <?php ?>
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <!-- Inisiatif-->
+
+
+  <div class="col-12 col-sm-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">On Progress</span>
+        <span class="info-box-number text-right h5">
+          <?php 
+            $project_list = $conn->query("SELECT * FROM project_list where status_progres_id > 5 and `status_progres_id`  <14")->num_rows;
+            echo format_num($project_list);
+          ?>
+          <?php ?>
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <!-- On Progress-->
+
+  <div class="col-12 col-sm-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">TTD</span>
+        <span class="info-box-number text-right h5">
+          <?php 
+            $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status_progres_id`  >13")->num_rows;
+            echo format_num($project_list);
+          ?>
+          <?php ?>
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <!-- TTD-->
+
+            <!-- <div class="col-md-3">
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
@@ -65,11 +126,11 @@
           ?>
           <?php ?>
         </span>
-      </div>
+      </div> -->
       <!-- /.info-box-content -->
-    </div>
+    <!-- </div> -->
     <!-- /.info-box -->
-  </div>
+  <!-- </div> -->
   <!-- /.col -->
   <!-- Bates Administrasi-->
 

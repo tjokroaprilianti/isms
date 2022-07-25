@@ -79,7 +79,7 @@
                       <a href="./?page=jenispembayaran" class="nav-link nav-jenispembayaran">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Jenis Pembayaran
+                          Jenis Kontrak
                         </p>
                       </a>
                     </li> 

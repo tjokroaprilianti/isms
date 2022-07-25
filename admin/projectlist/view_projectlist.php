@@ -27,16 +27,16 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<dd class="pl-4"><?= isset($cost_unit) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Nama Pelanggan</dt>
-		<dd class="pl-4"><?= isset($namapelanggan) ? $namapelanggan : "" ?></dd>
+		<dd class="pl-4"><?= isset($namapelanggan) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Jenis Pembayaran</dt>
-		<dd class="pl-4"><?= isset($jenispembayaran) ? $jenispembayaran : "" ?></dd>
+		<dd class="pl-4"><?= isset($jenispembayaran) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Penanggungjawab</dt>
-		<dd class="pl-4"><?= isset($penanggungjawab) ? $penanggungjawab : "" ?></dd>
+		<dd class="pl-4"><?= isset($penanggungjawab) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Status Progres</dt>
-		<dd class="pl-4"><?= isset($statusprogres) ? $statusprogres : "" ?></dd>
+		<dd class="pl-4"><?= isset($statusprogres) ? $name : "" ?></dd>
 
 		<dt class="text-muted">Status</dt>
 		<dd class="pl-4">

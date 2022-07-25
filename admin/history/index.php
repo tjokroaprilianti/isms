@@ -47,10 +47,10 @@
 				</colgroup>
 				<thead>
 					<tr>
-						<th>id</th>
+						<!-- <th>id</th>
 						<th>id_project_list</th>
 						<th>Cost Center id</th>
-						<th>Cost Unit id</th>
+						<th>Cost Unit id</th> -->
 						<th>Nama Pelanggan id</th>
 						<th>Penanggung Jawab is</th>
 						<th>Status Progres id</th>
@@ -63,13 +63,13 @@
 						<th>tanggal tanda tangan</th>
 						<th>upload kontrak</th>
 						<th>nama pic</th>
-						<th>delete flag</th>
+						<!-- <th>delete flag</th> -->
 						<th>tanggal update</th>
 						<th>id progres</th>
 						<th>kode progres</th>
 						<th>nama progres</th>
 						<th>status progres</th>
-						<th>delete flag progres</th>
+						<!-- <th>delete flag progres</th> -->
 					</tr>
 				</thead>
 				<tbody>
