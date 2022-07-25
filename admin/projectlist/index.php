@@ -23,10 +23,10 @@
         <div class="table-responsive">
 			<table class="table table-bordered table-striped table-bordered" id="list">
 				<colgroup>
-					<col width="100%">
 					<col width="20%">
-					<col width="100%">
-					<col width="100%">
+					<col width="10%">
+					<col width="20%">
+					<col width="20%">
 					<col width="100%">
 					<col width="100%">
 					<col width="100%">
@@ -42,7 +42,7 @@
 				</colgroup>
 				<thead>
 					<tr>
-						<th scope="col"> id</th>
+						<th scope="col" align=center>id</th>
 						<td align=center>Status Kontrak</td>
 						<td align=center>Cost Center</td>
 						<td align=center>Cost Unit</td>
@@ -87,34 +87,34 @@
 					?>
 					<tr>
 					
-							<td class="">
+							<td class="" align=center>
 								<div style="line-height:1em">
 									<div><?= $row['id_projectlist'] ?> </div>
 								</div>
 							</td>
-							<td class="">
+							<td class="" align=center>
 								<?php
 									if($row['status_progres_id']<6){
 										$status_selesai = "selesai";
 										?>
-										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="red" />
+										<svg height="20" width="20">
+										  <circle cx="10" cy="10" r="8" stroke="black" stroke-width="1" fill="red" />
 										</svg>
 										<?php
 									}
 									elseif($row['status_progres_id']<14){
 										$status_selesai = "PROGRESS";
 										?>
-										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="yellow" />
+										<svg height="20" width="20">
+										  <circle cx="10" cy="10" r="8" stroke="black" stroke-width="1" fill="yellow" />
 										</svg>
 										<?php
 									}
 									elseif($row['status_progres_id']>13){
 										$status_selesai = "PROGRESS";
 										?>
-										<svg height="100" width="100">
-										  <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="green" />
+										<svg height="20" width="20">
+										  <circle cx="10" cy="10" r="8" stroke="black" stroke-width="1" fill="green" />
 										</svg>
 										<?php
 									}else {
@@ -128,14 +128,14 @@
 								
 								
 							</td>
-							<td class="">
+							<td class="" align=center>
 								<div style="line-height:1em">
 									<div><?= $row['cost_center'] ?> </div>
 									
 								</div>
 							</td>
 
-							<td class="">
+							<td class="" align=center>
 								<div style="line-height:1em">
 									<div><?= $row['cost_unit'] ?> </div>
 									
@@ -258,11 +258,11 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id_projectlist'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Update</a>
+				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id_projectlist'] ?>"><span class="fa fa-edit text-primary"></span> Update</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
+				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id_projectlist'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
 							</td>
 							

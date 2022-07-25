@@ -11,7 +11,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 ?>
 <div class="container-fluid">
 	<form action="" id="projectlist-form">
-		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
+		<input type="text" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<!-- <div class="form-group">
 			<label for="category_id" class="control-label">Category</label>
 			<select name="category_id" id="category_id" class="form-control form-control-sm rounded-0" required="required">
@@ -29,7 +29,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<div class="form-group">
 			<label for="cost_center_id" class="control-label">Cost Center</label>
 			<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0" required="required">
-				<option value="" <?= isset($cost_center_id) ? 'selected' : '' ?>></option>
+				<option value="<?php echo isset($cost_center_id) ? 'selected' : '' ?>"></option>
 				<?php 
 				$items = $conn->query("SELECT * FROM `cost_center_list` where delete_flag = 0 and `status` = 1 ");
 				while($row= $items->fetch_assoc()):
