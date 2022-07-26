@@ -11,7 +11,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 ?>
 <div class="container-fluid">
 	<form action="" id="projectlist-form">
-		<input type="text" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
+		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<!-- <div class="form-group">
 			<label for="category_id" class="control-label">Category</label>
 			<select name="category_id" id="category_id" class="form-control form-control-sm rounded-0" required="required">
@@ -28,14 +28,27 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<!-- Batas Categori -->
 		<div class="form-group">
 			<label for="cost_center_id" class="control-label">Cost Center</label>
-			<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0" required="required">
-				<option value="<?php echo isset($cost_center_id) ? 'selected' : '' ?>"></option>
+			<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0" required="required" >
+			<option value="" <?= isset($cost_center_id) ? 'selected' : '' ?>></option>
 				<?php 
 				$items = $conn->query("SELECT * FROM `cost_center_list` where delete_flag = 0 and `status` = 1 ");
 				while($row= $items->fetch_assoc()):
+				if( ($row['id']) == ($cost_center_id) ){
+					
 				?>
+					
+					 <option value="<?= $row['id'] ?>" selected><?= $row['name'] ?></option> 
+					<?php
+				}
+				 else{
+				
+				?>
+				
 				<option value="<?= $row['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row['id'] ? 'selected' : '' ?>><?= $row['name'] ?></option>
-				<?php endwhile; ?>
+				
+				<?php
+				}
+				 endwhile; ?>
 			</select>
 
 		</div>
@@ -47,9 +60,17 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<?php 
 				$items_cu = $conn->query("SELECT * FROM `cost_unit_list` where delete_flag = 0 and `status` = 1 ");
 				while($row2= $items_cu->fetch_assoc()):
+				if(($row2['id']) == ($cost_unit_id) ){
+				?>
+					<option value="<?= $row2['id'] ?>" selected><?= $row2['name'] ?></option>
+					<?php
+				}else{
 				?>
 				<option value="<?= $row2['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row2['id'] ? 'selected' : '' ?>><?= $row2['name'] ?></option>
-				<?php endwhile; ?>
+				<?php
+				}
+				 endwhile; 
+				?>
 			</select>
 		</div>
 		<!-- Batas CU -->
@@ -60,9 +81,16 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<?php 
 				$items_np = $conn->query("SELECT * FROM `nama_pelanggan_list` where delete_flag = 0 and `status` = 1 ");
 				while($row3= $items_np->fetch_assoc()):
+				if(($row3['id']) == ($nama_pelanggan_id) ){
+				?>
+					<option value="<?= $row3['id'] ?>" selected><?= $row3['name'] ?></option>
+					<?php
+				}else{
 				?>
 				<option value="<?= $row3['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row3['id'] ? 'selected' : '' ?>><?= $row3['name'] ?></option>
-				<?php endwhile; ?>
+				<?php 
+				}
+				endwhile; ?>
 			</select>
 		</div>
 		<!-- Batas NP -->
@@ -73,9 +101,17 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<?php 
 				$items_jp = $conn->query("SELECT * FROM `jenis_pembayaran_list` where delete_flag = 0 and `status` = 1 ");
 				while($row4= $items_jp->fetch_assoc()):
+				if(($row4['id']) == ($jenis_pembayaran_id) ){
+				?>
+					<option value="<?= $row4['id'] ?>" selected><?= $row4['name'] ?></option>
+					<?php
+				}else{
 				?>
 				<option value="<?= $row4['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row4['id'] ? 'selected' : '' ?>><?= $row4['name'] ?></option>
-				<?php endwhile; ?>
+				<?php 
+				}
+				
+				endwhile; ?>
 			</select>
 		</div>
 		<!-- Batas JP -->
@@ -86,9 +122,17 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<?php 
 				$items_pj = $conn->query("SELECT * FROM `penanggungjawab_list` where delete_flag = 0 and `status` = 1 ");
 				while($row5= $items_pj->fetch_assoc()):
+				if(($row5['id']) == ($penanggungjawab_id) ){
+				?>
+					<option value="<?= $row5['id'] ?>" selected><?= $row5['name'] ?></option>
+					<?php
+				}else{
 				?>
 				<option value="<?= $row5['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row5['id'] ? 'selected' : '' ?>><?= $row5['name'] ?></option>
-				<?php endwhile; ?>
+				<?php 
+				}
+				
+				 endwhile; ?>
 			</select>
 		</div>
 		<!-- Batas PJ -->
@@ -99,9 +143,17 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<?php 
 				$items_sp = $conn->query("SELECT * FROM `status_progres_list` where delete_flag = 0 and `status` = 1 ");
 				while($row6= $items_sp->fetch_assoc()):
+				if(($row6['id']) == ($status_progres_id) ){
+				?>
+					<option value="<?= $row6['id'] ?>" selected><?= $row6['name'] ?></option>
+					<?php
+				}else{
 				?>
 				<option value="<?= $row6['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row6['id'] ? 'selected' : '' ?>><?= $row6['name'] ?></option>
-				<?php endwhile; ?>
+				<?php 
+				}
+				
+				 endwhile; ?>
 			</select>
 		</div>
 
@@ -149,7 +201,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 
 		<div class="form-group">
 			<label for="name" class="control-label">Nama PIC</label>
-			<input type="text" name="nama_pic" id="nama_pic" class="form-control form-control-sm rounded-0" value="<?php echo isset($name) ? $name : ''; ?>"  required/>
+			<input type="text" name="nama_pic" id="nama_pic" class="form-control form-control-sm rounded-0" value="<?php echo isset($nama_pic) ? $nama_pic : ''; ?>"  required/>
 		</div>
 	</form>
 </div>

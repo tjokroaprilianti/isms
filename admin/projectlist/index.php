@@ -282,7 +282,8 @@
 			uni_modal("<i class='far fa-plus-square'></i> Add New Item ","projectlist/manage_projectlist.php")
 		})
 		$('.edit-data').click(function(){
-			uni_modal("<i class='fa fa-edit'></i> Add New Item ","projectlist/manage_projectlist.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-edit'></i> Edit Item ","projectlist/manage_projectlist.php?id="+$(this).attr('data-id'))
+			
 		})
 		$('.view-data').click(function(){
 			uni_modal("<i class='fa fa-th-list'></i> Project  Details ","projectlist/view_projectlist.php?id="+$(this).attr('data-id'))
