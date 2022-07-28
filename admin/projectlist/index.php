@@ -260,6 +260,8 @@
 				                  <div class="dropdown-menu" role="menu">
 				                    <a class="dropdown-item view-data" href="javascript:void(0)" data-id="<?php echo $row['id_projectlist'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
 				                    <div class="dropdown-divider"></div>
+				                    <a class="dropdown-item history-data" href="javascript:void(0)" data-id="<?php echo $row['id_projectlist'] ?>"><span class="fa fa-eye text-dark"></span> History</a>
+				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item edit-data" href="javascript:void(0)" data-id="<?php echo $row['id_projectlist'] ?>"><span class="fa fa-edit text-primary"></span> Update</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id_projectlist'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
@@ -287,6 +289,9 @@
 		})
 		$('.view-data').click(function(){
 			uni_modal("<i class='fa fa-th-list'></i> Project  Details ","projectlist/view_projectlist.php?id="+$(this).attr('data-id'))
+		})
+		$('.history-data').click(function(){
+			uni_modal("<i class='fa fa-th-list'></i> Project History Details ","projectlist/history_projectlist.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [
