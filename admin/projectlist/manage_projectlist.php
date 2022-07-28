@@ -35,8 +35,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				if(empty($cost_center_id)){
 					$x++;
 					if($x==1){ ?>
-						<select name="cost_unit_id" id="cost_unit_id" class="form-control form-control-sm rounded-0"  required="required">
-						<option value="" <?= isset($cost_unit_id) ? 'selected' : '' ?>></option>
+						<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0"  required="required">
+						<option value="" <?= isset($cost_center_id) ? 'selected' : '' ?>></option>
 					<?php 
 					$items1 = $conn->query("SELECT * FROM `cost_center_list` where delete_flag = 0 and `status` = 1 ");
 					while($row= $items1->fetch_assoc()):

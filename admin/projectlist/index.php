@@ -230,7 +230,7 @@
 
 							<td class="">
 								<div style="line-height:1em">
-									<div><?= $row['upload_kontrak'] ?> </div>
+									<div><a href="<?= ("../".$row['upload_kontrak'])?>" class="pl-4"><?= ($row['upload_kontrak']) ? $row['upload_kontrak'] : "" ?></a> </div>
 									
 								</div>
 							</td>

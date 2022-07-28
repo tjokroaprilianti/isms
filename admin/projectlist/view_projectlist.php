@@ -1,7 +1,15 @@
 <?php
 require_once('./../../config.php');
 if(isset($_GET['id']) && $_GET['id'] > 0){
-    $qry = $conn->query("SELECT i.*, i.id as id_projectlist, c.*, d.*, c.name as `cost_center`, d.name as `cost_unit`  from `project_list` i join cost_center_list c on i.cost_center_id = c.id join cost_unit_list d on i.cost_unit_id = d.id where i.id = '{$_GET['id']}' and i.delete_flag = 0 ");
+    $qry = $conn->query("SELECT i.*, i.id as id_projectlist, c.*, d.*, c.name as `cost_center`, d.name as `cost_unit` , e.name as `namapelanggan` , f.name as jenispembayaran , g.name as penanggungjawab , h.name as `statusprogres`
+    	from `project_list` i 
+    	join cost_center_list c on i.cost_center_id = c.id 
+    	join cost_unit_list d on i.cost_unit_id = d.id 
+    	join nama_pelanggan_list e on i.nama_pelanggan_id = e.id
+    	join jenis_pembayaran_list f on i.jenis_pembayaran_id = f.id 
+		join penanggungjawab_list g on i.penanggungjawab_id = g.id
+		join status_progres_list h on h.id = i.status_progres_id
+    	where i.id = '{$_GET['id']}' and i.delete_flag = 0 ");
     if($qry->num_rows > 0){
         foreach($qry->fetch_assoc() as $k => $v){
             $$k=$v;
@@ -21,22 +29,22 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 <div class="container-fluid">
 	<dl>
 		<dt class="text-muted">Cost Center</dt>
-		<dd class="pl-4"><?= isset($cost_center_list) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($cost_center) ?$cost_center : "" ?></dd>
 
 		<dt class="text-muted">Cost Unit</dt>
-		<dd class="pl-4"><?= isset($cost_unit) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($cost_unit) ? $cost_unit : "" ?></dd>
 
 		<dt class="text-muted">Nama Pelanggan</dt>
-		<dd class="pl-4"><?= isset($namapelanggan) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($namapelanggan) ? $namapelanggan : "" ?></dd>
 
 		<dt class="text-muted">Jenis Pembayaran</dt>
-		<dd class="pl-4"><?= isset($jenispembayaran) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($jenispembayaran) ? $jenispembayaran : "" ?></dd>
 
 		<dt class="text-muted">Penanggungjawab</dt>
-		<dd class="pl-4"><?= isset($penanggungjawab) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($penanggungjawab) ? $penanggungjawab : "" ?></dd>
 
 		<dt class="text-muted">Status Progres</dt>
-		<dd class="pl-4"><?= isset($statusprogres) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($statusprogres) ? $statusprogres : "" ?></dd>
 
 		<dt class="text-muted">Status</dt>
 		<dd class="pl-4">
@@ -48,28 +56,28 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</dd>
 
 		<dt class="text-muted">Judul Kontrak</dt>
-		<dd class="pl-4"><?= isset($judulkontrak) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($judul_kontrak) ? $judul_kontrak : "" ?></dd>
 
 		<dt class="text-muted">Nilai Kontrak</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($nilai_kontrak) ? $nilai_kontrak : "" ?></dd>
 
 		<dt class="text-muted">Nomor Kontrak</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($nomor_kontrak) ? $nomor_kontrak : "" ?></dd>
 
 		<dt class="text-muted">Tanggal Mulai</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($tanggal_mulai) ? $tanggal_mulai : "" ?></dd>
 
 		<dt class="text-muted">Tanggal Berakhir</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($tanggal_berakhir) ? $tanggal_berakhir : "" ?></dd>
 
 		<dt class="text-muted">Tanggal Tanda Tangan</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($tanggal_tanda_tangan) ? $tanggal_tanda_tangan : "" ?></dd>
 
 		<dt class="file">Upload Kontrak</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<a href="<?= ("../".$upload_kontrak)?>" class="pl-4"><?= ($upload_kontrak) ? $upload_kontrak : "" ?></a>
 
 		<dt class="text-muted">Nama PIC</dt>
-		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
+		<dd class="pl-4"><?= isset($nama_pic) ? $nama_pic : "" ?></dd>
 
 		<!-- <dt class="text-muted">Description</dt>
 		<dd class="pl-4"><?= isset($description) ? str_replace(["\n\r", "\n", "\r"],"<br>", htmlspecialchars_decode($description)) : '' ?></dd> -->
