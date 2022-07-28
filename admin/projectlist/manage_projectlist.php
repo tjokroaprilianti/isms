@@ -232,24 +232,23 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 
 		<div class="form-group">
 			<label for="name" class="control-label">Tanggal Mulai</label>
-			<input type="text" name="tanggal_mulai" id="tanggal_mulai" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d', strtotime($tanggal_mulai)) ? $tanggal_mulai : ''; ?>"  required/>
 			
-			<input type="date" name="tanggal_mulai" id="tanggal_mulai" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d', strtotime($tanggal_mulai)) ? $tanggal_mulai : ''; ?>"  required/>
+			<input type="date" name="tanggal_mulai" id="tanggal_mulai" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d',strtotime($tanggal_mulai)) ?>"  required/>
 		</div>
 
 		<div class="form-group">
 			<label for="name" class="control-label">Tanggal Berakhir</label>
-			<input type="date" name="tanggal_berakhir" id="tanggal_berakhir" class="form-control form-control-sm rounded-0" value="<?php echo isset($tanggal_berakhir) ? $tanggal_berakhir : ''; ?>"  required/>
+			<input type="date" name="tanggal_berakhir" id="tanggal_berakhir" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d',strtotime($tanggal_berakhir)) ?>"  required/>
 		</div>
 
 		<div class="form-group">
 			<label for="name" class="control-label">Tanggal Tanda Tangan</label>
-			<input type="date" name="tanggal_tanda_tangan" id="tanggal_tanda_tangan" class="form-control form-control-sm rounded-0" value="<?php echo isset($tanggal_tanda_tangan) ? $tanggal_tanda_tangan : ''; ?>"  required/>
+			<input type="date" name="tanggal_tanda_tangan" id="tanggal_tanda_tangan" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d',strtotime($tanggal_tanda_tangan)) ?>"  required/>
 		</div>
 		
 		<div class="form-group">
 			<label for="name" class="control-label">Upload Kontrak </label>
-			<input type="file" name="upload_kontrak" id="upload_kontrak" class="form-control form-control-sm rounded-0" value="<?php echo isset($upload_kontrak) ? $upload_kontrak : ''; ?>"  required/>
+			<input type="file" name="upload_kontrak" id="upload_kontrak" class="form-control form-control-sm rounded-0" value="<?php echo isset($upload_kontrak)  ?>"  required/>
 		</div>
 
 		<div class="form-group">
