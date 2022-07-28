@@ -16,7 +16,7 @@
     #page-title{
       text-shadow: 6px 4px 7px black;
       font-size: 3.5em;
-      color: #CF9FFF !important;
+      color: #D90077 !important;
       /*background: #CF9FFF;*/
     }
   </style>
