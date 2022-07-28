@@ -500,7 +500,8 @@ Class Master extends DBConnection {
 			$sql2 = "INSERT INTO `history` set id_project_list='$id', {$data} ";
 			$save2 = $this->conn->query($sql2);
 			if($save2){
-				$this->settings->set_flashdata('success',$resp['msg']);
+				/*$this->settings->set_flashdata('success',$resp['msg']);
+				return json_encode($resp);*/
 			}
 			$resp['id'] = $id;
 			if(!empty($_FILES['upload_kontrak']['tmp_name'])){

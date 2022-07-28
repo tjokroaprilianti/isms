@@ -55,8 +55,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				if( (!empty($cost_center_id)) && (($row1['id']) == ($cost_center_id)) ){
 				?>
 					
-						<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0" disabled required="required" >
-						<option value="" <?= isset($cost_center_id) ? 'selected' : '' ?>></option>
+						<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0"   >
+						
 					<option value="<?= $row1['id'] ?>" selected><?= $row1['name'] ?></option>
 					</select>
 					<?php
@@ -76,8 +76,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				while($row21= $items_cu->fetch_assoc()):
 				if( (!empty($cost_unit_id)) && (($row21['id']) == ($cost_unit_id)) ){
 				?>
-					<select name="cost_unit_id" id="cost_unit_id" class="form-control form-control-sm rounded-0" disabled required="required">
-						<option value="" <?= isset($cost_unit_id) ? 'selected' : '' ?>></option>
+					<select name="cost_unit_id" id="cost_unit_id" class="form-control form-control-sm rounded-0"  >
+						
 					<option value="<?= $row21['id'] ?>" selected><?= $row21['name'] ?></option>
 					</select>
 					<?php
@@ -116,8 +116,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				
 				if( (!empty($nama_pelanggan_id)) && (($row31['id']) == ($nama_pelanggan_id)) ){
 				?>
-					<select name="nama_pelanggan_id" id="nama_pelanggan_id" class="form-control form-control-sm rounded-0" disabled required="required">
-				<option value="" <?= isset($nama_pelanggan_id) ? 'selected' : '' ?>></option>
+					<select name="nama_pelanggan_id" id="nama_pelanggan_id" class="form-control form-control-sm rounded-0"  >
+				
 						
 					<option value="<?= $row31['id'] ?>" selected><?= $row31['name'] ?></option>
 					</select>
