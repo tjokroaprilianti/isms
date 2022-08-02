@@ -133,7 +133,7 @@ Class Users extends DBConnection {
 		else
 		unset($_POST['password']);
 		extract($_POST);
-		$main_field = ['firstname', 'middlename', 'lastname', 'gender', 'contact', 'email', 'status', 'password'];
+		$main_field = ['firstname', 'middlename', 'lastname', 'email', 'gender', 'contact', 'email', 'status', 'password'];
 		$data = "";
 		$check = $this->conn->query("SELECT * FROM `customer_list` where email = '{$email}' ".($id > 0 ? " and id!='{$id}'" : "")." ")->num_rows;
 		if($check > 0){
