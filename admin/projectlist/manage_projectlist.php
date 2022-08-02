@@ -242,7 +242,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</div>
 
 		<div class="form-group">
-			<label for="name" class="control-label">Tanggal Tanda Tangan</label>
+			<label for="name" class="control-label">Tanggal Perjanjian</label>
 			<input type="date" name="tanggal_tanda_tangan" id="tanggal_tanda_tangan" class="form-control form-control-sm rounded-0" value="<?php echo date('Y-m-d',strtotime($tanggal_tanda_tangan)) ?>"  required/>
 		</div>
 		

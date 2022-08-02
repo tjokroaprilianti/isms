@@ -70,7 +70,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<dt class="text-muted">Tanggal Berakhir</dt>
 		<dd class="pl-4"><?= isset($tanggal_berakhir) ? $tanggal_berakhir : "" ?></dd>
 
-		<dt class="text-muted">Tanggal Tanda Tangan</dt>
+		<dt class="text-muted">Tanggal Perjanjian</dt>
 		<dd class="pl-4"><?= isset($tanggal_tanda_tangan) ? $tanggal_tanda_tangan : "" ?></dd>
 
 		<dt class="file">Upload Kontrak</dt>

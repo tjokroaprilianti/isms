@@ -65,7 +65,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 						<td align=center>Nomor Kontrak</td>
 						<td align=center>Tanggal Mulai</td>
 						<td align=center>Tanggal Berakhir</td>
-						<td align=center>Tanggal Tanda Tangan</td>
+						<td align=center>Tanggal Perjanjian</td>
 						<td align=center>Tanggal Update</td>
 						<td align=center>Upload Kontrak</td>
 						<td align=center>Nama PIC</td>
