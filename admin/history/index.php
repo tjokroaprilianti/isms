@@ -47,28 +47,30 @@
 				</colgroup>
 				<thead>
 					<tr>
-						<!-- <th>id</th>
-						<th>id_project_list</th>
+						<th>id</th>
+						<!-- <th>id_project_list</th>
 						<th>Cost Center id</th>
 						<th>Cost Unit id</th> -->
-						<th>Nama Pelanggan id</th>
-						<th>Penanggung Jawab is</th>
-						<th>Status Progres id</th>
+						<th>Nama Pelanggan</th>
+						<th>Jenis Pembayaran</th>
+						<th>Penanggung Jawab</th>
+						<th>Status Progres</th>
 						<th>status</th>
 						<th>judul kontrak</th>
-						<th>nilai kontrak</th>
+						<th>Nilai Kontrak</th>
 						<th>Nomor Kontrak</th>
-						<th>Tanggal mulai</th>
-						<th>Tanggal berakhir</th>
-						<th>tanggal tanda tangan</th>
-						<th>upload kontrak</th>
-						<th>nama pic</th>
+						<th>Tanggal Mulai</th>
+						<th>Tanggal Berakhir</th>
+						<th>Tanggal Tanda Tangan</th>
+						<th>Upload Kontrak</th>
+						<th>Nama Pic</th>
 						<!-- <th>delete flag</th> -->
-						<th>tanggal update</th>
-						<th>id progres</th>
-						<th>kode progres</th>
-						<th>nama progres</th>
-						<th>status progres</th>
+						<th>Tanggal Update</th>
+						<th>Progres</th>
+						<th>Kode Progres</th>
+						<th>Action</th>
+						<!-- <th>Nama Progres</th>
+						<th>Status Progres</th> -->
 						<!-- <th>delete flag progres</th> -->
 					</tr>
 				</thead>
@@ -79,11 +81,10 @@
 						while($row = $qry->fetch_assoc()):
 					?>
 						<tr>
-							<td class="text-center"><?php echo $i++; ?></td>
-							
+							<!-- <td class="text-center"><?php echo $i++; ?></td> -->
 							<td class=""><?= $row['id_project_list'] ?></td>
-							<td class=""><?= $row['cost_center_id'] ?></td>
-							<td class=""><?= $row['cost_unit_id'] ?></td>
+							<!-- <td class=""><?= $row['cost_center_id'] ?></td>
+							<td class=""><?= $row['cost_unit_id'] ?></td> -->
 							<td class=""><?= $row['nama_pelanggan_id'] ?></td>
 							<td class=""><?= $row['penanggungjawab_id'] ?></td>
 							<td class=""><?= $row['status_progres_id'] ?></td>
@@ -103,13 +104,13 @@
 							<td class=""><?= $row['tanggal_tanda_tangan'] ?></td>
 							<td class=""><?= $row['upload_kontrak'] ?></td>
 							<td class=""><?= $row['nama_pic'] ?></td>
-							<td class=""><?= $row['delete_flag'] ?></td>
+							<!-- <td class=""><?= $row['delete_flag'] ?></td> -->
 							<td class=""><?= $row['tanggal_update'] ?></td>
 							<td class=""><?= $row['id_progres'] ?></td>
 							<td class=""><?= $row['kode_progres'] ?></td>
 							<td class=""><?= $row['name_progres'] ?></td>
 							<td class=""><?= $row['status_progres'] ?></td>
-							<td class=""><?= $row['delete_flag_progres'] ?></td>
+							<!-- <td class=""><?= $row['delete_flag_progres'] ?></td> -->
 							
 							<!-- <td align="center">
 								 <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
@@ -137,13 +138,13 @@
 			_conf("Are you sure to delete this costunit permanently?","delete_costunit",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
-			uni_modal("<i class='far fa-plus-square'></i> Add New costunit ","costunit/manage_costunit.php")
+			uni_modal("<i class='far fa-plus-square'></i> Add New History ","costunit/manage_history.php")
 		})
 		$('.edit-data').click(function(){
-			uni_modal("<i class='fa fa-edit'></i> Add New costunit ","costunit/manage_costunit.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-edit'></i> Add New costunit ","costunit/manage_history.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Costunit Details ","Costunit/view_costunit.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> History Details ","Costunit/view_hystory.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [

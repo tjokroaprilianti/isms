@@ -31,10 +31,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		</div>
 
 
-		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
+		input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group">
-			<label for="category_id" class="control-label">Nama Kontrak</label>
-			<select name="category_id" id="category_id" class="form-control form-control-sm rounded-0" required="required">
+			<label for="project_list_id" class="control-label">Nama Kontrak</label>
+			<select name="project_list_id" id="project_list_id" class="form-control form-control-sm rounded-0" required="required">
 				<option value="" <?= isset($category_id) ? 'selected' : '' ?>></option>
 				<?php 
 				$items = $conn->query("SELECT * FROM `category_list` where delete_flag = 0 and `status` = 1 ");
@@ -43,7 +43,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<option value="<?= $row['id'] ?>" <?= isset($category_id) && $category_id == $row['id'] ? 'selected' : '' ?>><?= $row['name'] ?></option>
 				<?php endwhile; ?>
 			</select>
-		</div>
+		</div> 
 		<div class="form-group">
 			<label for="name" class="control-label">Nama Kontrak</label>
 			<input type="text" name="name" id="name" class="form-control form-control-sm rounded-0" value="<?php echo isset($name) ? $name : ''; ?>"  required/>
@@ -52,9 +52,9 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<label for="unit" class="control-label">Status Progres</label>
 			<input type="text" name="unit" id="unit" class="form-control form-control-sm rounded-0" value="<?php echo isset($unit) ? $unit : ''; ?>"  required/>
 		</div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="description" class="control-label">Description</label>
-			<textarea rows="3" name="description" id="description" class="form-control form-control-sm rounded-0" required><?php echo isset($description) ? $description : ''; ?></textarea>
+			<textarea rows="3" name="description" id="description" class="form-control form-control-sm rounded-0" required><?php echo isset($description) ? $description : ''; ?></textarea> -->
 
 	<form action="" id="costunit-form">
 		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
