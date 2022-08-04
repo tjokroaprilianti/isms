@@ -33,11 +33,12 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Updated</th>
-						<th>Avatar</th>
+						<!-- <th>Date Updated</th>
+						<th>Avatar</th> -->
 						<th>Name</th>
 						<th>Username</th>
-						<th>Type</th>
+						<th>Alamat Email</th>
+						<th>Level Akses</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -49,12 +50,13 @@
 					?>
 						<tr>
 							<td class="text-center"><?php echo $i++; ?></td>
-							<td><?php echo date("Y-m-d H:i",strtotime($row['date_updated'])) ?></td>
+							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['date_updated'])) ?></td>
 							<td class="text-center">
                                 <img src="<?= validate_image($row['avatar']) ?>" alt="" class="img-thumbnail rounded-circle user-avatar">
-                            </td>
+                            </td> -->
 							<td><?php echo $row['name'] ?></td>
 							<td><?php echo $row['username'] ?></td>
+							<td><?php echo $row['alamat_email'] ?></td>
 							<td class="text-center">
                                 <?php if($row['type'] == 1): ?>
                                     Administrator

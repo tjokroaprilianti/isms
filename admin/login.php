@@ -8,7 +8,7 @@
   </script>
   <style>
     body{
-      background-image: url("<?php echo validate_image($_settings->info('cover')) ?>");
+      /*background-image: url("<?php echo validate_image($_settings->info('cover')) ?>");*/
       background-size:cover;
       background-repeat:no-repeat;
       backdrop-filter: contrast(1);
@@ -20,6 +20,7 @@
       /*background: #CF9FFF;*/
     }
   </style>
+  <h1> CIS </h1>
   <h1 class="text-center text-white px-4 py-5" id="page-title"><b><?php echo $_settings->info('name') ?></b></h1>
 <div class="login-box">
   <!-- /.login-logo -->

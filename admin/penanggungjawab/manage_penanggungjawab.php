@@ -22,6 +22,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<textarea rows="3" name="name" id="name" class="form-control form-control-sm rounded-0" required><?php echo isset($name) ? $name : ''; ?></textarea>
 		</div>
 		<div class="form-group">
+			<label for="name" class="control-label">Nama Unit</label>
+			<textarea rows="3" name="unit" id="unit" class="form-control form-control-sm rounded-0" required><?php echo isset($unit) ? $unit : ''; ?></textarea>
+		</div>
+		<div class="form-group">
 			<label for="status" class="control-label">Status</label>
 			<select name="status" id="status" class="form-control form-control-sm rounded-0" required="required">
 				<option value="1" <?= isset($status) && $status == 1 ? 'selected' : '' ?>>Active</option>

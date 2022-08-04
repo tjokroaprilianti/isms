@@ -15,7 +15,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Contract</span>
+        <span class="info-box-text">All Contract</span>
         <span class="info-box-number text-right h5">
           <?php 
             $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status` = 1 ")->num_rows;
@@ -37,7 +37,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Status Contract Active</span>
+        <span class="info-box-text">Contract Active</span>
         <span class="info-box-number text-right h5">
           <?php 
             $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status` = 1")->num_rows;
@@ -57,7 +57,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Inisiatif</span>
+        <span class="info-box-text">Initiation</span>
         <span class="info-box-number text-right h5">
           <?php 
             $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status_progres_id`  <6 ")->num_rows;
@@ -98,7 +98,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-gradient-light elevation-1"><i class="fas fa-th-list"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">TTD</span>
+        <span class="info-box-text">Complete</span>
         <span class="info-box-number text-right h5">
           <?php 
             $project_list = $conn->query("SELECT * FROM project_list where delete_flag = 0 and `status_progres_id`  >13")->num_rows;

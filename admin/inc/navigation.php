@@ -135,7 +135,7 @@
                       <a href="./?page=history" class="nav-link nav-history">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                          history
+                          CIS
                         </p>
                       </a>
                     </li> 

@@ -13,7 +13,7 @@
 </style>
 <div class="card card-outline rounded-0 card-teal">
 	<div class="card-header">
-		<h3 class="card-title">List of Cost Unit</h3>
+		<h3 class="card-title">List of History</h3>
 		<!-- <div class="card-tools">
 			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
 		</div> -->
@@ -52,18 +52,18 @@
 						<th>Cost Center id</th>
 						<th>Cost Unit id</th> -->
 						<th>Nama Pelanggan</th>
-						<th>Jenis Pembayaran</th>
+						<th>Jenis Perjanjian</th>
 						<th>Penanggung Jawab</th>
 						<th>Status Progres</th>
 						<th>status</th>
 						<th>judul kontrak</th>
-						<th>Nilai Kontrak</th>
-						<th>Nomor Kontrak</th>
+						<!-- <th>Nilai Kontrak</th>
+						<th>Nomor Kontrak</th> -->
 						<th>Tanggal Mulai</th>
 						<th>Tanggal Berakhir</th>
 						<th>Tanggal Tanda Tangan</th>
-						<th>Upload Kontrak</th>
-						<th>Nama Pic</th>
+						<!-- <th>Upload Kontrak</th> -->
+						<!-- <th>Nama Pic</th> -->
 						<!-- <th>delete flag</th> -->
 						<th>Tanggal Update</th>
 						<th>Progres</th>

@@ -23,7 +23,6 @@
         <div class="table-responsive">
 			<table class="table table-bordered table-striped table-bordered" id="list">
 				<colgroup>
-					<col width="20%">
 					<col width="10%">
 					<col width="20%">
 					<col width="20%">
@@ -36,29 +35,33 @@
 					<col width="100%">
 					<col width="100%">
 					<col width="100%">
-					<col width="100%">
-					<col width="100%">
-					<col width="100%">
+					
 				</colgroup>
 				<thead>
 					<tr>
 						<th scope="col" align=center>id</th>
 						<td align=center>Status Kontrak</td>
-						<td align=center>Cost Center</td>
-						<td align=center>Cost Unit</td>
+						<!-- <td align=center>Cost Center</td>
+						<td align=center>Cost Unit</td> -->
 						<td align=center>Nama Pelanggan</td>
-						<td align=center>Jenis Pembayaran</td>
+						<td align=center>Jenis Perjanjian</td>
 						<td align=center>Penanggung Jawab</td>
-						<td align=center>Status Progres</td>
+						<td align=center>Progres Terkini</td>
 						
 						<td align=center>Judul Kontrak</td>
 						<td align=center>Nilai Kontrak</td>
-						<td align=center>Nomor Kontrak</td>
+						<!-- <td align=center>Nomor Kontrak</td> -->
 						<td align=center>Tanggal Mulai</td>
 						<td align=center>Tanggal Berakhir</td>
+<<<<<<< Updated upstream
 						<td align=center>Tanggal Perjanjian</td>
 						<td align=center>Upload Kontrak</td>
 						<td align=center>Nama PIC</td>
+=======
+						<!-- <td align=center>Tanggal Tanda Tangan</td> -->
+						<!-- <td align=center>Upload Kontrak</td>
+						<td align=center>Nama PIC</td> -->
+>>>>>>> Stashed changes
 						<td align=center>Status</td>
 						<td align=center>Action</td>
 						
@@ -128,7 +131,7 @@
 								
 								
 							</td>
-							<td class="" align=center>
+							<!-- <td class="" align=center>
 								<div style="line-height:1em">
 									<div><?= $row['cost_center'] ?> </div>
 									
@@ -140,7 +143,7 @@
 									<div><?= $row['cost_unit'] ?> </div>
 									
 								</div>
-							</td>
+							</td> -->
 
 							<td class="">
 								<div style="line-height:1em">
@@ -210,12 +213,12 @@
 								</div>
 							</td>
 
-							<td class="">
+							<!-- <td class="">
 								<div style="line-height:1em">
 									<div><?= $row['nomor_kontrak'] ?> </div>
 									
 								</div>
-							</td>
+							</td> -->
 							
 
 
@@ -226,9 +229,9 @@
 							<td><?php echo date("Y-m-d H:i",strtotime($row['tanggal_berakhir'])) ?></td>
 
 							<!-- <td class="text-center"><?php //echo $i++; ?></td> -->
-							<td><?php echo date("Y-m-d H:i",strtotime($row['tanggal_tanda_tangan'])) ?></td>
-
-							<td class="">
+							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['tanggal_tanda_tangan'])) ?></td>
+ -->
+							<!-- <td class="">
 								<div style="line-height:1em">
 									<div><a href="<?= ("../".$row['upload_kontrak'])?>" class="pl-4"><?= ($row['upload_kontrak']) ? $row['upload_kontrak'] : "" ?></a> </div>
 									
@@ -240,7 +243,7 @@
 									<div><?= $row['nama_pic'] ?>  </div>
 									
 								</div>
-							</td>
+							</td> -->
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
                                     <span class="badge badge-success px-3 rounded-pill">Active</span>

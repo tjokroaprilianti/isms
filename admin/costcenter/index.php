@@ -24,8 +24,8 @@
 				<colgroup>
 					<col width="5%">
 					<col width="15%">
-					<col width="25%">
-					<col width="35%">
+					<col width="50%">
+					<col width="15%">
 					<col width="35%">
 					<col width="10%">
 					<col width="10%">
@@ -34,8 +34,8 @@
 					<tr>
 						<th>id</th>
 						<th>Kode</th>
-						<th>Nama</th>
-						<th>Date Created</th>
+						<th>Nama Unit</th>
+						<!-- <th>Date Created</th> -->
 						<th>Date Updated</th>
 						<th>Status</th>
 						<th>Action</th>
@@ -44,14 +44,14 @@
 				<tbody>
 					<?php 
 					$i = 1;
-						$qry = $conn->query("SELECT * from `cost_center_list` where delete_flag = 0 order by `name` asc ");
+						$qry = $conn->query("SELECT * from `cost_center_list` where delete_flag = 0 order by `id` asc ");
 						while($row = $qry->fetch_assoc()):
 					?>
 						<tr>
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td class=""><?= $row['kode'] ?></td>
 							<td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['name'])) ?></p></td>
-							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
+							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td> -->
 							<td><?php echo date("Y-m-d H:i",strtotime($row['date_updated'])) ?></td>
 							<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
@@ -86,13 +86,13 @@
 			_conf("Are you sure to delete this Costcenter permanently?","delete_costcenter",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
-			uni_modal("<i class='far fa-plus-square'></i> Add New Costcenter ","costcenter/manage_costcenter.php")
+			uni_modal("<i class='far fa-plus-square'></i> Add New Cost Center ","costcenter/manage_costcenter.php")
 		})
 		$('.edit-data').click(function(){
-			uni_modal("<i class='fa fa-edit'></i> Add New Costcenter ","costcenter/manage_costcenter.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-edit'></i> Add New Cost Center ","costcenter/manage_costcenter.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Costcenter Details ","costcenter/view_costcenter.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> Cost Center Details ","costcenter/view_costcenter.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [

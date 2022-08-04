@@ -23,10 +23,10 @@
 			<table class="table table-hover table-striped table-bordered" id="list">
 				<colgroup>
 					<col width="5%">
-					<col width="15%">
+					<col width="10%">
+					<col width="35%">
+					<col width="30%">
 					<col width="25%">
-					<col width="35%">
-					<col width="35%">
 					<col width="10%">
 					<col width="10%">
 				</colgroup>
@@ -34,8 +34,8 @@
 					<tr>
 						<th>id</th>
 						<th>Kode</th>
-						<th>Name</th>
-						<th>Date Created</th>
+						<th>Nama</th>
+						<th>Nama Unit</th>
 						<th>Date Updated</th>
 						<th>Status</th>
 						<th>Action</th>
@@ -51,7 +51,7 @@
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td class=""><?= $row['kode'] ?></td>
 							<td class=""><?= $row['name'] ?></td>
-							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
+							<td class=""><?= $row['unit'] ?></td>
 							<td><?php echo date("Y-m-d H:i",strtotime($row['date_updated'])) ?></td>
 							<!-- <td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['description'])) ?></p></td> -->
 							<td class="text-center">

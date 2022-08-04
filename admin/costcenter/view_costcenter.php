@@ -27,8 +27,8 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<dd class="pl-4"><?= isset($kode) ? $kode : "" ?></dd>
 		<dt class="text-muted">Nama</dt>
 		<dd class="pl-4"><?= isset($name) ? $name : "" ?></dd>
-		<dt class="text-muted">Date Created</dt>
-		<dd class="pl-4"><?= isset($date_created) ? $date_created : "" ?></dd>
+		<!-- <dt class="text-muted">Date Created</dt>
+		<dd class="pl-4"><?= isset($date_created) ? $date_created : "" ?></dd> -->
 		<dt class="text-muted">Date Updated</dt>
 		<dd class="pl-4"><?= isset($date_updated) ? $date_updated : "" ?></dd>
 		

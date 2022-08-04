@@ -37,13 +37,13 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<dt class="text-muted">Nama Pelanggan</dt>
 		<dd class="pl-4"><?= isset($namapelanggan) ? $namapelanggan : "" ?></dd>
 
-		<dt class="text-muted">Jenis Pembayaran</dt>
+		<dt class="text-muted">Jenis Kontrak</dt>
 		<dd class="pl-4"><?= isset($jenispembayaran) ? $jenispembayaran : "" ?></dd>
 
 		<dt class="text-muted">Penanggungjawab</dt>
 		<dd class="pl-4"><?= isset($penanggungjawab) ? $penanggungjawab : "" ?></dd>
 
-		<dt class="text-muted">Status Progres</dt>
+		<dt class="text-muted">Progres Terkini</dt>
 		<dd class="pl-4"><?= isset($statusprogres) ? $statusprogres : "" ?></dd>
 
 		<dt class="text-muted">Status</dt>
@@ -70,14 +70,18 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<dt class="text-muted">Tanggal Berakhir</dt>
 		<dd class="pl-4"><?= isset($tanggal_berakhir) ? $tanggal_berakhir : "" ?></dd>
 
+<<<<<<< Updated upstream
 		<dt class="text-muted">Tanggal Perjanjian</dt>
+=======
+		<dt class="text-muted">Last Updated</dt>
+>>>>>>> Stashed changes
 		<dd class="pl-4"><?= isset($tanggal_tanda_tangan) ? $tanggal_tanda_tangan : "" ?></dd>
 
-		<dt class="file">Upload Kontrak</dt>
+		<!-- <dt class="file">Upload Kontrak</dt>
 		<a href="<?= ("../".$upload_kontrak)?>" class="pl-4"><?= ($upload_kontrak) ? $upload_kontrak : "" ?></a>
 
 		<dt class="text-muted">Nama PIC</dt>
-		<dd class="pl-4"><?= isset($nama_pic) ? $nama_pic : "" ?></dd>
+		<dd class="pl-4"><?= isset($nama_pic) ? $nama_pic : "" ?></dd> -->
 
 		<!-- <dt class="text-muted">Description</dt>
 		<dd class="pl-4"><?= isset($description) ? str_replace(["\n\r", "\n", "\r"],"<br>", htmlspecialchars_decode($description)) : '' ?></dd> -->

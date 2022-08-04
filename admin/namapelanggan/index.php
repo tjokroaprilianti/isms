@@ -24,7 +24,7 @@
 				<colgroup>
 					<col width="5%">
 					<col width="15%">
-					<col width="25%">
+					<col width="50%">
 					<col width="35%">
 					<col width="35%">
 					<col width="10%">
@@ -35,7 +35,7 @@
 						<th>id</th>
 						<th>Kode</th>
 						<th>Nama</th>
-						<th>Date Created</th>
+						<!-- <th>Date Created</th> -->
 						<th>Date Updated</th>
 						<th>Status</th>
 						<th>Action</th>
@@ -51,7 +51,7 @@
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td class=""><?= $row['kode'] ?></td>
 							<td class=""><?= $row['name'] ?></td>
-							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
+							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td> -->
 							<td><?php echo date("Y-m-d H:i",strtotime($row['date_updated'])) ?></td>
 							<!-- <td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['description'])) ?></p></td> -->
 							<td class="text-center">
@@ -87,13 +87,13 @@
 			_conf("Are you sure to delete this Namapelanggan permanently?","delete_namapelanggan",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
-			uni_modal("<i class='far fa-plus-square'></i> Add New Namapelanggan ","namapelanggan/manage_namapelanggan.php")
+			uni_modal("<i class='far fa-plus-square'></i> Add New Nama Pelanggan ","namapelanggan/manage_namapelanggan.php")
 		})
 		$('.edit-data').click(function(){
-			uni_modal("<i class='fa fa-edit'></i> Add New Namapelanggan ","namapelanggan/manage_namapelanggan.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-edit'></i> Add New Nama Pelanggan ","namapelanggan/manage_namapelanggan.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Nama pelanggan Details ","namapelanggan/view_namapelanggan.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> Nama Pelanggan Details ","namapelanggan/view_namapelanggan.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [

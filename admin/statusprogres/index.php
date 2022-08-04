@@ -24,18 +24,18 @@
 				<colgroup>
 					<col width="5%">
 					<col width="15%">
+					<col width="35%">
 					<col width="25%">
-					<col width="35%">
-					<col width="35%">
 					<col width="10%">
 					<col width="10%">
+					
 				</colgroup>
 				<thead>
 					<tr>
 						<th>id</th>
 						<th>Kode</th>
 						<th>Nama</th>
-						<th>Date Created</th>
+						<!-- <th>Date Created</th> -->
 						<th>Date Updated</th>
 						<th>Status</th>
 						<th>Action</th>
@@ -44,14 +44,14 @@
 				<tbody>
 					<?php 
 					$i = 1;
-						$qry = $conn->query("SELECT * from `status_progres_list` where delete_flag = 0 order by `name` asc ");
+						$qry = $conn->query("SELECT * from `status_progres_list` where delete_flag = 0 order by `id` asc ");
 						while($row = $qry->fetch_assoc()):
 					?>
 						<tr>
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td class=""><?= $row['kode'] ?></td>
 							<td class=""><?= $row['name'] ?></td>
-							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
+							<!-- <td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td> -->
 							<td><?php echo date("Y-m-d H:i",strtotime($row['date_updated'])) ?></td>
 							<!-- <td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['description'])) ?></p></td> -->
 							<td class="text-center">
@@ -87,13 +87,13 @@
 			_conf("Are you sure to delete this Statusprogres permanently?","delete_Statusprogres",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
-			uni_modal("<i class='far fa-plus-square'></i> Add New Statusprogres ","statusprogres/manage_statusprogres.php")
+			uni_modal("<i class='far fa-plus-square'></i> Add New Status Progres ","statusprogres/manage_statusprogres.php")
 		})
 		$('.edit-data').click(function(){
-			uni_modal("<i class='fa fa-edit'></i> Add New Statusprogres ","statusprogres/manage_statusprogres.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-edit'></i> Add New Status Progres ","statusprogres/manage_statusprogres.php?id="+$(this).attr('data-id'))
 		})
 		$('.view-data').click(function(){
-			uni_modal("<i class='fa fa-th-list'></i> Statusprogres Details ","statusprogres/view_statusprogres.php?id="+$(this).attr('data-id'))
+			uni_modal("<i class='fa fa-th-list'></i> Status Progres Details ","statusprogres/view_statusprogres.php?id="+$(this).attr('data-id'))
 		})
 		$('.table').dataTable({
 			columnDefs: [
