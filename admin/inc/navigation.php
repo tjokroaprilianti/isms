@@ -142,6 +142,42 @@
 
                     <!-- ini batesnya-->
 
+                    <li class="nav-item dropdown">
+                      <a href="./?page=satuanteknis" class="nav-link nav-satuanteknis">
+                        <i class="nav-icon fas fa-clipboard-list"></i>
+                        <p>
+                          Satuan Teknis
+                        </p>
+                      </a>
+                    </li> 
+
+                    <!-- ini batesnya-->
+
+                    <li class="nav-item dropdown">
+                      <a href="./?page=alurdo" class="nav-link nav-alurdo">
+                        <i class="nav-icon fas fa-clipboard-list"></i>
+                        <p>
+                          Alur DO
+                        </p>
+                      </a>
+                    </li> 
+
+                    <!-- ini batesnya-->
+
+                    <li class="nav-item dropdown">
+                      <a href="./?page=historydo" class="nav-link nav-historydo">
+                        <i class="nav-icon fas fa-clipboard-list"></i>
+                        <p>
+                          History DO
+                        </p>
+                      </a>
+                    </li> 
+
+                    <!-- ini batesnya-->
+
+
+
+
 
                     <!-- <?php if($_settings->userdata('type') == 1): ?>
                     <li class="nav-item">
