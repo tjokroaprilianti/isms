@@ -25,6 +25,10 @@
 					<col width="5%">
 					<col width="15%">
 					<col width="50%">
+					<col width="50%">
+					<col width="50%">
+					<col width="50%">
+					<col width="50%">
 					<col width="35%">
 					<col width="35%">
 					<col width="10%">
@@ -52,7 +56,7 @@
 						while($row = $qry->fetch_assoc()):
 					?>
 						<tr>
-							<td class="text-center"><?php echo $i++; ?></td>
+							<!-- <td class="text-center"><?php echo $i++; ?></td> -->
 							
 							<td class=""><?= $row['id'] ?></td>
 							<td class=""><p class="mb-0 truncate-1"><?= strip_tags(htmlspecialchars_decode($row['cc'])) ?></p></td>

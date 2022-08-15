@@ -10,130 +10,45 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 }
 ?>
 <div class="container-fluid">
-	<form action="" id="projectlist-form">
+	<form action="" id="alurdo-form">
 		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
-		<!-- <div class="form-group">
-			<label for="category_id" class="control-label">Category</label>
-			<select name="category_id" id="category_id" class="form-control form-control-sm rounded-0" required="required">
-				<option value="" <?= isset($category_id) ? 'selected' : '' ?>></option>
-				<?php 
-				$items = $conn->query("SELECT * FROM `category_list` where delete_flag = 0 and `status` = 1 ");
-				while($row= $items->fetch_assoc()):
-				?>
-				<option value="<?= $row['id'] ?>" <?= isset($category_id) && $category_id == $row['id'] ? 'selected' : '' ?>><?= $row['name'] ?></option>
-				<?php endwhile; ?>
-			</select>
-		</div> -->
-
-		<!-- Batas Categori -->
-
-
-		<!-- <div class="form-group">
-			<label for="cost_center_id" class="control-label">Cost Center</label>
-			<?php 
-				$x=0;
-				$items = $conn->query("SELECT * FROM `cost_center_list` where delete_flag = 0 and `status` = 1 ");
-				while($row1= $items->fetch_assoc()):
-				if(empty($cost_center_id)){
-					$x++;
-					if($x==1){ ?>
-						<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0"  required="required">
-						<option value="" <?= isset($cost_center_id) ? 'selected' : '' ?>></option>
-					<?php 
-					$items1 = $conn->query("SELECT * FROM `cost_center_list` where delete_flag = 0 and `status` = 1 ");
-					while($row= $items1->fetch_assoc()):
-
-				?>
-				
-						
-						<option value="<?= $row['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row['id'] ? 'selected' : '' ?>><?= $row['name'] ?></option>
-					
-				<?php
-					endwhile;
-				?>
-					</select>
-				<?php
-				}}
-				if( (!empty($cost_center_id)) && (($row1['id']) == ($cost_center_id)) ){
-				?>
-					
-						<select name="cost_center_id" id="cost_center_id" class="form-control form-control-sm rounded-0"   >
-						
-					<option value="<?= $row1['id'] ?>" selected><?= $row1['name'] ?></option>
-					</select>
-					<?php
-				}
-				
-				 endwhile; 
-				?>
-
-		</div> -->
-
-		<!-- Batas CC -->
-
-
-		<!-- <div class="form-group">
-			<label for="cost_unit_id" class="control-label">Cost Unit</label>
-			
-				<?php 
-				$x=0;
-				$items_cu = $conn->query("SELECT * FROM `cost_unit_list` where delete_flag = 0 and `status` = 1 ");
-				while($row21= $items_cu->fetch_assoc()):
-				if( (!empty($cost_unit_id)) && (($row21['id']) == ($cost_unit_id)) ){
-				?>
-					<select name="cost_unit_id" id="cost_unit_id" class="form-control form-control-sm rounded-0"  >
-						
-					<option value="<?= $row21['id'] ?>" selected><?= $row21['name'] ?></option>
-					</select>
-					<?php
-				}if(empty($cost_unit_id)){
-					$x++;
-					if($x==1){ ?>
-						<select name="cost_unit_id" id="cost_unit_id" class="form-control form-control-sm rounded-0"  required="required">
-						<option value="" <?= isset($cost_unit_id) ? 'selected' : '' ?>></option>
-					<?php 
-					$items_cu1 = $conn->query("SELECT * FROM `cost_unit_list` where delete_flag = 0 and `status` = 1 ");
-					while($row2= $items_cu1->fetch_assoc()):
-
-				?>
-				
-						
-						<option value="<?= $row2['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row2['id'] ? 'selected' : '' ?>><?= $row2['name'] ?></option>
-					
-				<?php
-					endwhile;
-				?>
-					</select>
-				<?php
-					}
-				}
-				 endwhile; 
-				?>
-			
-		</div> -->
 		
-		<!-- Batas CU -->
+		<!-- AWAL NAMA PROJECT -->
+		<div class="form-group">
+			<div class="form-group">
+			<label for="project_do" class="control-label">NAMA PROJECT</label>
+			<input type="text" name="project_do" id="project_do" class="form-control form-control-sm rounded-0" value="<?php echo isset($project_do) ? $project_do : ''; ?>"  required/>
+		</div>
+		
+		<!-- BATAS NAMA PROJECT -->
 		
 		<div class="form-group">
-			<label for="nama_pelanggan_id" class="control-label">Nama Pelanggan</label>
+			<div class="form-group">
+			<label for="kode_project" class="control-label">KODE PROJECT</label>
+			<input type="text" name="kode_project" id="kode_project" class="form-control form-control-sm rounded-0" value="<?php echo isset($kode_project) ? $kode_project : ''; ?>"  required/>
+		</div>
+		
+		<!-- BATAS KODE PROJECT -->
+		
+			<label for="pelanggan" class="control-label">NAMA PELANGGAN</label>
 			<?php 
 				$x=0;
 				$items_np = $conn->query("SELECT * FROM `nama_pelanggan_list` where delete_flag = 0 and `status` = 1 ");
 				while($row31= $items_np->fetch_assoc()):
 				
-				if( (!empty($nama_pelanggan_id)) && (($row31['id']) == ($nama_pelanggan_id)) ){
+				if( (!empty($pelanggan)) && (($row31['id']) == ($pelanggan)) ){
 				?>
-					<select name="nama_pelanggan_id" id="nama_pelanggan_id" class="form-control form-control-sm rounded-0"  >
+					<select name="pelanggan" id="pelanggan" class="form-control form-control-sm rounded-0"  >
 				
 						
 					<option value="<?= $row31['id'] ?>" selected><?= $row31['name'] ?></option>
 					</select>
 					<?php
-				}if(empty($nama_pelanggan_id)){
+				}if(empty($pelanggan)){
 					$x++;
 					if($x==1){ ?>
-						<select name="nama_pelanggan_id" id="nama_pelanggan_id" class="form-control form-control-sm rounded-0" required="required">
-				<option value="" <?= isset($nama_pelanggan_id) ? 'selected' : '' ?>></option>
+						<select name="pelanggan" id="pelanggan" class="form-control form-control-sm rounded-0" required="required">
+				<option value="" <?= isset($pelanggan) ? 'selected' : '' ?>></option>
 					<?php 
 					$items_np1 = $conn->query("SELECT * FROM `nama_pelanggan_list` where delete_flag = 0 and `status` = 1 ");
 					while($row3= $items_np1->fetch_assoc()):
@@ -152,81 +67,46 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 
 		</div>
 
-		<!-- Batas NAMA PELANGGAN -->
-		
-		<!-- <div class="form-group">
-			<label for="jenis_pembayaran_id" class="control-label">Jenis Pembayaran</label>
-			<select name="jenis_pembayaran_id" id="jenis_pembayaran_id" class="form-control form-control-sm rounded-0" required="required">
-				<option value="" <?= isset($jenis_pembayaran_id) ? 'selected' : '' ?>></option>
-				<?php 
-				$items_jp = $conn->query("SELECT * FROM `jenis_pembayaran_list` where delete_flag = 0 and `status` = 1 ");
-				while($row4= $items_jp->fetch_assoc()):
-				if(($row4['id']) == ($jenis_pembayaran_id) ){
-				?>
-					<option value="<?= $row4['id'] ?>" selected><?= $row4['name'] ?></option>
-					<?php
-				}else{
-				?>
-				<option value="<?= $row4['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row4['id'] ? 'selected' : '' ?>><?= $row4['name'] ?></option>
-				<?php 
-				}
-				
-				endwhile; ?>
+		<!-- Batas NAMA PELANGGAN --> 
+
+		<div class="form-group">
+			<label for="status" class="control-label">BAPL</label>
+			<select name="bapl" id="bapl" class="form-control form-control-sm rounded-0" required="required">
+				<option value="1" <?= isset($bapl) && $bapl == 1 ? 'selected' : '' ?>>ADA</option>
+				<option value="0" <?= isset($bapl) && $bapl == 0 ? 'selected' : '' ?>>TIDAK ADA</option>
 			</select>
 		</div>
-		Batas JP
-		<div class="form-group">
-			<label for="penanggungjawab_id" class="control-label">Penanggungjawab</label>
-			<select name="penanggungjawab_id" id="penanggungjawab_id" class="form-control form-control-sm rounded-0" required="required">
-				<option value="" <?= isset($penanggungjawab_id) ? 'selected' : '' ?>></option>
-				<?php 
-				$items_pj = $conn->query("SELECT * FROM `penanggungjawab_list` where delete_flag = 0 and `status` = 1 ");
-				while($row5= $items_pj->fetch_assoc()):
-				if(($row5['id']) == ($penanggungjawab_id) ){
-				?>
-					<option value="<?= $row5['id'] ?>" selected><?= $row5['name'] ?></option>
-					<?php
-				}else{
-				?>
-				<option value="<?= $row5['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row5['id'] ? 'selected' : '' ?>><?= $row5['name'] ?></option>
-				<?php 
-				}
-				
-				 endwhile; ?>
-			</select>
-		</div> -->
 
-		<!-- Batas PJ -->
-		
-		<!-- <div class="form-group">
-			<label for="status_progres_id" class="control-label">Status Progres</label>
-			<select name="status_progres_id" id="status_progres_id" class="form-control form-control-sm rounded-0" required="required">
-				<option value="" <?= isset($status_progres_id) ? 'selected' : '' ?>></option>
-				<?php 
-				$items_sp = $conn->query("SELECT * FROM `status_progres_list` where delete_flag = 0 and `status` = 1 ");
-				while($row6= $items_sp->fetch_assoc()):
-				if(($row6['id']) == ($status_progres_id) ){
-				?>
-					<option value="<?= $row6['id'] ?>" selected><?= $row6['name'] ?></option>
-					<?php
-				}else{
-				?>
-				<option value="<?= $row6['id'] ?>" <?php echo isset($meta['type']) && $meta['type'] == $row6['id'] ? 'selected' : '' ?>><?= $row6['name'] ?></option>
-				<?php 
-				}
-				
-				 endwhile; ?>
-			</select>
-		</div> -->
+		<!-- BATAS BAPL -->
 
 		<div class="form-group">
-			<label for="status" class="control-label">Status</label>
+			<label for="status" class="control-label">BAPP</label>
+			<select name="bapp" id="bapp" class="form-control form-control-sm rounded-0" required="required">
+				<option value="1" <?= isset($bapp) && $bapp == 1 ? 'selected' : '' ?>>ADA</option>
+				<option value="0" <?= isset($bapp) && $bapp == 0 ? 'selected' : '' ?>>TIDAK ADA</option>
+			</select>
+		</div>
+
+		<!-- BATAS BAPP -->
+
+		<div class="form-group">
+			<label for="ba_eval" class="control-label">BA EVAL</label>
+			<select name="ba_eval" id="ba_eval" class="form-control form-control-sm rounded-0" required="required">
+				<option value="1" <?= isset($ba_eval) && $ba_eval == 1 ? 'selected' : '' ?>>ADA</option>
+				<option value="0" <?= isset($ba_eval) && $ba_eval == 0 ? 'selected' : '' ?>>TIDAK ADA</option>
+			</select>
+		</div>
+
+		<!-- BATAS BA EVAL -->
+
+		<div class="form-group">
+			<label for="status" class="control-label">STATUS</label>
 			<select name="status" id="status" class="form-control form-control-sm rounded-0" required="required">
 				<option value="1" <?= isset($status) && $status == 1 ? 'selected' : '' ?>>Active</option>
 				<option value="0" <?= isset($status) && $status == 0 ? 'selected' : '' ?>>Inactive</option>
 			</select>
 		</div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="name" class="control-label">Judul Kontrak</label>
 			<input type="text" name="judul_kontrak" id="judul_kontrak" class="form-control form-control-sm rounded-0" value="<?php echo isset($judul_kontrak) ? $judul_kontrak : ''; ?>"  required/>
 		</div>
@@ -267,7 +147,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<input type="text" name="nama_pic" id="nama_pic" class="form-control form-control-sm rounded-0" value="<?php echo isset($nama_pic) ? $nama_pic : ''; ?>"  required/>
 		</div>
 	</form>
-</div>
+</div> -->
 
 		
 <script>
@@ -280,13 +160,13 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				dropdownParent:$('#uni_modal')
 			})
 		})*/
-		$('#projectlist-form').submit(function(e){
+		$('#alurdo-form').submit(function(e){
 			e.preventDefault();
             var _this = $(this)
 			 $('.err-msg').remove();
 			start_loader();
 			$.ajax({
-				url:_base_url_+"classes/Master.php?f=save_projectlist",
+				url:_base_url_+"classes/Master.php?f=save_alurdo",
 				data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,
@@ -303,7 +183,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 					if(typeof resp =='object' && resp.status == 'success'){
 						// location.reload()
 						alert_toast(resp.msg, 'success')
-						uni_modal("<i class='fa fa-th-list'></i> Projectlist Details ","projectlist/view_projectlist.php?id="+resp.id)
+						uni_modal("<i class='fa fa-th-list'></i> ALUR DO Details ","alurdo/view_alurdo.php?id="+resp.id)
 						$('#uni_modal').on('hide.bs.modal', function(){
 							location.reload()
 						})

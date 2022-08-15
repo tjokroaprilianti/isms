@@ -26,6 +26,9 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="clearfix"></div>
                 <!-- Sidebar Menu -->
+
+                   
+
                 <nav class="mt-1">
                    <ul class="nav nav-pills nav-sidebar flex-column text-sm nav-compact nav-flat nav-child-indent nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item dropdown">
@@ -44,6 +47,14 @@
                         </p>
                       </a>
                     </li>   -->
+
+                     <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                              DATA MASTER
+                            <span class="sr-only">Toggle Dropdown</span>
+
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+
                     <li class="nav-item dropdown">
                       <a href="./?page=costcenter" class="nav-link nav-costcenter">
                         <i class="nav-icon fas fa-th-list"></i>
@@ -52,6 +63,7 @@
                         </p>
                       </a>
                     </li> 
+                    <div class="dropdown-divider"></div>
 
                     <!-- ini batesnya-->
 
@@ -63,6 +75,7 @@
                         </p>
                       </a>
                     </li> 
+                     <div class="dropdown-divider"></div>
                     <!-- ini batesnya -->
 
                     <li class="nav-item dropdown">
@@ -72,7 +85,8 @@
                           Nama Pelanggan
                         </p>
                       </a>
-                    </li> 
+                    </li>
+                     <div class="dropdown-divider"></div> 
                     <!-- ini batesnya -->
 
                     <li class="nav-item dropdown">
@@ -83,6 +97,7 @@
                         </p>
                       </a>
                     </li> 
+                    
                     <!-- ini batesnya -->
 
                     <li class="nav-item dropdown">
@@ -104,6 +119,7 @@
                       </a>
                     </li> 
                     <!-- ini batesnya -->
+                  </div>
 
                     <!-- <li class="nav-item dropdown">
                       <a href="./?page=items" class="nav-link nav-items">

@@ -101,7 +101,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				$items_np = $conn->query("SELECT * FROM `nama_pelanggan_list` where delete_flag = 0 and `status` = 1 ");
 				while($row31= $items_np->fetch_assoc()):
 				
-				if( (!empty($nama_pelanggan_id)) && (($row31['id']) == ($nama_pelanggan_id)) ){
+				if( (!empty($pelanggan)) && (($row31['id']) == ($pelanggan)) ){
 				?>
 					<select name="pelanggan" id="pelanggan" class="form-control form-control-sm rounded-0"  >
 				
@@ -188,7 +188,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<!-- BATAS SKEMA PEMBAYARAN -->
 
 		<div class="form-group">
-			<label for="name" class="control-label">PIC</label>
+			<label for="pic" class="control-label">PIC</label>
 			<textarea rows="3" name="pic" id="pic" class="form-control form-control-sm rounded-0" required><?php echo isset($pic) ? $pic : ''; ?></textarea>
 		</div>
 		<!-- BATAS PIC -->

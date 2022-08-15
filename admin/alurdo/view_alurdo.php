@@ -15,10 +15,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
             $$k=$v;
         }
     }else{
-		echo '<script>alert("item ID is not valid."); location.replace("./?page=projectlist")</script>';
+		echo '<script>alert("item ID is not valid."); location.replace("./?page=alurdo")</script>';
 	}
 }else{
-	echo '<script>alert("item ID is Required."); location.replace("./?page=projectlist")</script>';
+	echo '<script>alert("item ID is Required."); location.replace("./?page=alurdo")</script>';
 }
 ?>
 <style>
@@ -38,13 +38,13 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<dd class="pl-4"><?= isset($pelanggan) ? $pelanggan : "" ?></dd>
 
 		<dt class="text-muted">BAPL</dt>
-		<dd class="pl-4"><?= isset($jenispembayaran) ? $jenispembayaran : "" ?></dd>
+		<dd class="pl-4"><?= isset($bapl) ? $bapl : "" ?></dd>
 
 		<dt class="text-muted">BAPP</dt>
-		<dd class="pl-4"><?= isset($penanggungjawab) ? $penanggungjawab : "" ?></dd>
+		<dd class="pl-4"><?= isset($bapp) ? $bapp : "" ?></dd>
 
 		<dt class="text-muted">BA EVAL</dt>
-		<dd class="pl-4"><?= isset($statusprogres) ? $statusprogres : "" ?></dd>
+		<dd class="pl-4"><?= isset($ba_eval) ? $ba_eval : "" ?></dd>
 
 		<dt class="text-muted">Status</dt>
 		<dd class="pl-4">
@@ -54,37 +54,6 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<span class="badge badge-danger px-3 rounded-pill">Inactive</span>
 			<?php endif; ?>
 		</dd>
-
-		<!-- <dt class="text-muted">Judul Kontrak</dt>
-		<dd class="pl-4"><?= isset($judul_kontrak) ? $judul_kontrak : "" ?></dd>
-
-		<dt class="text-muted">Nilai Kontrak</dt>
-		<dd class="pl-4"><?= isset($nilai_kontrak) ? $nilai_kontrak : "" ?></dd>
-
-		<dt class="text-muted">Nomor Kontrak</dt>
-		<dd class="pl-4"><?= isset($nomor_kontrak) ? $nomor_kontrak : "" ?></dd>
-
-		<dt class="text-muted">Tanggal Mulai</dt>
-		<dd class="pl-4"><?= isset($tanggal_mulai) ? $tanggal_mulai : "" ?></dd>
-
-		<dt class="text-muted">Tanggal Berakhir</dt>
-		<dd class="pl-4"><?= isset($tanggal_berakhir) ? $tanggal_berakhir : "" ?></dd>
- -->
-<!-- <<<<<<< Updated upstream
-		<dt class="text-muted">Tanggal Perjanjian</dt>
-=======
-		<dt class="text-muted">Last Updated</dt>
->>>>>>> Stashed changes
-		<dd class="pl-4"><?= isset($tanggal_tanda_tangan) ? $tanggal_tanda_tangan : "" ?></dd>
- -->
-		<!-- <dt class="file">Upload Kontrak</dt>
-		<a href="<?= ("../".$upload_kontrak)?>" class="pl-4"><?= ($upload_kontrak) ? $upload_kontrak : "" ?></a>
-
-		<dt class="text-muted">Nama PIC</dt>
-		<dd class="pl-4"><?= isset($nama_pic) ? $nama_pic : "" ?></dd> -->
-
-		<!-- <dt class="text-muted">Description</dt>
-		<dd class="pl-4"><?= isset($description) ? str_replace(["\n\r", "\n", "\r"],"<br>", htmlspecialchars_decode($description)) : '' ?></dd> -->
 		
 	</dl>
 </div>

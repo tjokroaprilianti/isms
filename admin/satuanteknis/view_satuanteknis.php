@@ -1,16 +1,16 @@
 <?php
 require_once('./../../config.php');
 if(isset($_GET['id']) && $_GET['id'] > 0){
-    $qry = $conn->query("SELECT * from `cost_unit_list` where id = '{$_GET['id']}' and delete_flag = 0 ");
+    $qry = $conn->query("SELECT * from `satuan_teknis` where id = '{$_GET['id']}' and delete_flag = 0 ");
     if($qry->num_rows > 0){
         foreach($qry->fetch_assoc() as $k => $v){
             $$k=$v;
         }
     }else{
-		echo '<script>alert("cost unit ID is not valid."); location.replace("./?page=costunit")</script>';
+		echo '<script>alert("cost unit ID is not valid."); location.replace("./?page=satuanteknis")</script>';
 	}
 }else{
-	echo '<script>alert("cost unit ID is Required."); location.replace("./?page=costunit")</script>';
+	echo '<script>alert("cost unit ID is Required."); location.replace("./?page=satuanteknis")</script>';
 }
 ?>
 <style>
