@@ -59,7 +59,7 @@
                       <a href="./?page=costcenter" class="nav-link nav-costcenter">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Cost Center
+                          COST CENTER
                         </p>
                       </a>
                     </li> 
@@ -71,7 +71,7 @@
                       <a href="./?page=costunit" class="nav-link nav-costunit">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Cost Unit
+                          COST UNIT
                         </p>
                       </a>
                     </li> 
@@ -82,7 +82,7 @@
                       <a href="./?page=namapelanggan" class="nav-link nav-namapelanggan">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Nama Pelanggan
+                          NAMA PELANGGAN
                         </p>
                       </a>
                     </li>
@@ -93,7 +93,7 @@
                       <a href="./?page=jenispembayaran" class="nav-link nav-jenispembayaran">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Jenis Kontrak
+                          JENIS KONTRAK
                         </p>
                       </a>
                     </li> 
@@ -104,7 +104,7 @@
                       <a href="./?page=penanggungjawab" class="nav-link nav-penanggungjawab">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Penanggung Jawab
+                          PENANGGUNG JAWAB
                         </p>
                       </a>
                     </li> 
@@ -114,7 +114,7 @@
                       <a href="./?page=statusprogres" class="nav-link nav-statusprogres">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Status Progres
+                          STATUS PROGRES
                         </p>
                       </a>
                     </li> 
@@ -143,7 +143,7 @@
                       <a href="./?page=projectlist" class="nav-link nav-projectlist">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                          Project List
+                          PROJECT LIST
                         </p>
                       </a>
                     </li> 
@@ -162,7 +162,7 @@
                       <a href="./?page=satuanteknis" class="nav-link nav-satuanteknis">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                          Satuan Teknis
+                          SATUAN TEKNIS
                         </p>
                       </a>
                     </li> 
@@ -173,7 +173,7 @@
                       <a href="./?page=alurdo" class="nav-link nav-alurdo">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                          Alur DO
+                          ALUR MONDOC
                         </p>
                       </a>
                     </li> 
@@ -184,7 +184,7 @@
                       <a href="./?page=historydo" class="nav-link nav-historydo">
                         <i class="nav-icon fas fa-clipboard-list"></i>
                         <p>
-                          History DO
+                          HISTORY MONDOC
                         </p>
                       </a>
                     </li> 

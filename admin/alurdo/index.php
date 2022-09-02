@@ -14,7 +14,7 @@
 </style>
 <div class="card card-outline rounded-0 card-teal">
 	<div class="card-header">
-		<h3 class="card-title">LIST OF ALUR DO</h3>
+		<h3 class="card-title">LIST OF ALUR MONDOC</h3>
 		<div class="card-tools">
 			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
 		</div>
@@ -100,7 +100,7 @@
                                 <?php if($row['status'] == 1): ?>
                                     <span class="badge badge-success px-3 rounded-pill">Active</span>
                                 <?php else: ?>
-                                    <span class="badge badge-danger px-3 rounded-pill">Inactive</span>
+                                    <span class="badge badge-danger px-3 rounded-pill">Paid</span>
                                 <?php endif; ?>
                             </td>
 

@@ -103,7 +103,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<label for="status" class="control-label">STATUS</label>
 			<select name="status" id="status" class="form-control form-control-sm rounded-0" required="required">
 				<option value="1" <?= isset($status) && $status == 1 ? 'selected' : '' ?>>Active</option>
-				<option value="0" <?= isset($status) && $status == 0 ? 'selected' : '' ?>>Inactive</option>
+				<option value="0" <?= isset($status) && $status == 0 ? 'selected' : '' ?>>Paid</option>
 			</select>
 		</div>
 		<!-- <div class="form-group">

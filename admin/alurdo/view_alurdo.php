@@ -51,7 +51,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<?php if($status == 1): ?>
 				<span class="badge badge-success px-3 rounded-pill">Active</span>
 			<?php else: ?>
-				<span class="badge badge-danger px-3 rounded-pill">Inactive</span>
+				<span class="badge badge-danger px-3 rounded-pill">Paid</span>
 			<?php endif; ?>
 		</dd>
 		

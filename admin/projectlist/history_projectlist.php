@@ -67,6 +67,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 						<td align=center>Tanggal Berakhir</td>
 						<td align=center>Tanggal Perjanjian</td>
 						<td align=center>Tanggal Update</td>
+						<td align=center>Lama Proses</td>
 						<td align=center>Upload Kontrak</td>
 						<td align=center>Nama PIC</td>
 						<td align=center>Status</td>
@@ -236,6 +237,74 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 							<td><?php echo date("Y-m-d H:i",strtotime($row['tanggal_tanda_tangan'])) ?></td>
 							<td><?php echo date("Y-m-d H:i",strtotime($row['tanggal_update'])) ?></td>
 
+
+
+
+							<td>
+
+													<?php
+													$diff = (new DateTime($history_projectlist[$arr - 1]->tanggal_update))->diff(new DateTime($history_projectlist[$arr]->tanggal_update));
+													echo $diff->d . " hari /" . $diff->h . " jam /" . $diff->i . " menit /" . $diff->s . " detik";
+													
+													?>
+												</td>
+
+							<!-- Awal Lama Proses -->
+
+							<!-- <?php if (($h->status_histori == 'MENUNGGU')) { ?>
+												<td>
+													<?php $diff = (new DateTime($h->created_at_histori))->diff($date2);
+													echo  $diff->d . " hari /" . $diff->h . " jam /" . $diff->i . " menit /" . $diff->s . " detik";
+													//$date_awal = (new DateTime($h->created_at_histori));
+													?>
+												</td>
+											<?php } elseif ((($h->status_histori == 'DITERIMA') || ($h->status_histori == 'DITOLAK')) && (($countHistory + 1) > 0)) {  // 
+											?>
+												<td>
+
+													<?php
+													$diff = (new DateTime($histori[$arr - 1]->created_at_histori))->diff(new DateTime($histori[$arr]->created_at_histori));
+													echo $diff->d . " hari /" . $diff->h . " jam /" . $diff->i . " menit /" . $diff->s . " detik";
+													
+													?>
+												</td>
+
+
+											<?php } elseif (($h->status_histori == 'DI PROSES') && ($countHistory + 1) > 0 && $arr != 0) {  // 
+												
+											?>
+												<td>
+
+													<?php
+													$diff = (new DateTime($histori[$arr - 1]->created_at_histori))->diff(new DateTime($histori[$arr]->created_at_histori));
+													echo $diff->d . " hari /" . $diff->h . " jam /" . $diff->i . " menit /" . $diff->s . " detik";
+
+													?>
+												</td>
+											<?php } elseif (($h->status_histori == 'DI PROSES') && ($countHistory + 1) > 0 && $arr == 0) {  // 
+											?>
+												<td>
+
+													<?php
+													$diff = (new DateTime($histori[$arr]->created_at_histori))->diff($date2);
+													echo $diff->d . " hari /" . $diff->h . " jam /" . $diff->i . " menit /" . $diff->s . " detik";
+													?>
+												</td>
+
+											<?php } elseif ($h->status_histori == 'SELESAI') {
+											?>
+												<td>
+													<?php
+													?>
+												</td>
+											<?php  }
+											?> -->
+
+
+
+							<!-- Akhir Lama Proses -->
+
+						
 							<td class="">
 								<div style="line-height:1em">
 									<div><a href="<?= ("../".$row['upload_kontrak'])?>" class="pl-4"><?= ($row['upload_kontrak']) ? $row['upload_kontrak'] : "" ?></a> </div>

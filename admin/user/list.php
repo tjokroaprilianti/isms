@@ -26,7 +26,7 @@
 					<col width="15%">
 					<col width="15%">
 					<col width="25%">
-					<col width="15%">
+					<!-- <col width="15%"> -->
 					<col width="10%">
 					<col width="15%">
 				</colgroup>
@@ -37,7 +37,7 @@
 						<th>Avatar</th> -->
 						<th>Name</th>
 						<th>Username</th>
-						<th>Alamat Email</th>
+						<!-- <th>Alamat Email</th> -->
 						<th>Level Akses</th>
 						<th>Action</th>
 					</tr>
@@ -56,7 +56,7 @@
                             </td> -->
 							<td><?php echo $row['name'] ?></td>
 							<td><?php echo $row['username'] ?></td>
-							<td><?php echo $row['alamat_email'] ?></td>
+							<!-- <td><?php echo $row['alamat_email'] ?></td> -->
 							<td class="text-center">
                                 <?php if($row['type'] == 1): ?>
                                     Administrator
