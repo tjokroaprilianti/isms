@@ -74,7 +74,12 @@
 									
 								</div>
 							</td>
-							
+							<td class="">
+								<div style="line-height:1em">
+									<div><?= $row['pelanggan'] ?> </div>
+									
+								</div>
+							</td>
 								<td class="">
 									<div style="line-height:1em">
 										<div><?= $row['bapl'] ?> </div>

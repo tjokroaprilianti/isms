@@ -710,8 +710,7 @@ Class Master extends DBConnection {
 
 	// AWAL ALUR DO
 
-
-	function save_alurdo(){
+function save_alurdo(){
 		extract($_POST);
 		$data = "";
 		
@@ -725,13 +724,13 @@ Class Master extends DBConnection {
 		}
 		
 
-		$check = $this->conn->query("SELECT * FROM `alur_do` where `project_do` = '{$nama_project}' and delete_flag = 0 ".(!empty($id) ? " and id != {$id} " : "")." ")->num_rows;
+		$check = $this->conn->query("SELECT * FROM `alur_do` where `project_do` = '{$project_do}' and delete_flag = 0 ".(!empty($id) ? " and id != {$id} " : "")." ")->num_rows;
 		if($this->capture_err())
 			return $this->capture_err();
 		
 		if($check > 0){
 			$resp['status'] = 'failed';
-			$resp['msg'] = "Satuan teknis already exists.";
+			$resp['msg'] = "Alur DO already exists.";
 			return json_encode($resp);
 			exit;
 		}
@@ -745,10 +744,53 @@ Class Master extends DBConnection {
 			$save = $this->conn->query($sql);
 		if($save /*&& $save2*/){
 			$id = !empty($id) ? $id : $this->conn->insert_id;
-			$sql2 = "INSERT INTO `historydo` set id_project='$id', {$data} ";
+			$sql2 = "INSERT INTO `history_do` set id='$id', {$data} ";
 			$save2 = $this->conn->query($sql2);
 			if($save2){
 			}
+			// $resp['id'] = $id;
+			// if(!empty($_FILES['upload_kontrak']['tmp_name'])){
+			// 		if(!is_dir(base_app."uploads/file_upload"))
+			// 			mkdir(base_app."uploads/file_upload");
+			// 		$type_file=$_FILES['upload_kontrak']['type'];
+			// 		//$ext = pathinfo($_FILES['upload_kontrak']['name'], PATHINFO_EXTENSION);
+			// 		$ext = strtolower(pathinfo($_FILES['upload_kontrak']['name'],PATHINFO_EXTENSION));
+			// 		$fname = "uploads/file_upload/$id.$ext";
+			// 		$accept = array('image/jpeg','image/png','pdf');
+			// 		if(!in_array($_FILES['upload_kontrak']['type'],$accept)){
+			// 			$err = "Image file type is invalid";
+			// 		}
+			// 		if($_FILES['upload_kontrak']['type'] == 'image/jpeg')
+			// 			$uploadfile = imagecreatefromjpeg($_FILES['upload_kontrak']['tmp_name']);
+						
+			// 		if($_FILES['upload_kontrak']['type'] == 'image/png')
+			// 			$uploadfile = imagecreatefrompng($_FILES['upload_kontrak']['tmp_name']);
+						
+			// 		if($ext == 'pdf')
+			// 			$uploadfile = ($_FILES['upload_kontrak']['tmp_name']);
+						
+			// 		if(!$uploadfile){
+			// 			$err = "File is invalid";
+			// 		}
+			// 		if(( ($_FILES['upload_kontrak']['type'] == 'image/png') || ($_FILES['upload_kontrak']['type'] == 'image/jpeg')) ){
+			// 			$temp = imagescale($uploadfile,200,200);
+			// 			if(is_file(base_app.$fname))
+			// 			unlink(base_app.$fname);
+			// 			$upload =imagepng($temp,base_app.$fname);
+					//}
+					
+				// 	if(( ($_FILES['upload_kontrak']['type'] == 'image/png') || ($_FILES['upload_kontrak']['type'] == 'image/jpeg')) && $upload){
+				// 		$this->conn->query("UPDATE `project_list` set `upload_kontrak` = CONCAT('{$fname}', '?v=',unix_timestamp(CURRENT_TIMESTAMP)) where id = '{$id}'");
+				// 		if($this->settings->userdata('id') == $id)
+				// 		$this->settings->set_userdata('upload_kontrak',$fname."?v=".time());
+				// 	}
+				// 	if(($ext == 'pdf' || $ext == 'PDF' ) && (move_uploaded_file($_FILES["upload_kontrak"]["tmp_name"], base_app.$fname))){
+				// 		$this->conn->query("UPDATE `project_list` set `upload_kontrak` = CONCAT('{$fname}', '?v=',unix_timestamp(CURRENT_TIMESTAMP)) where id = '{$id}'");
+				// 		if($this->settings->userdata('id') == $id)
+				// 		$this->settings->set_userdata('upload_kontrak',$fname."?v=".time());
+				// 	}
+				// 	imagedestroy($temp);
+				// }
 		
 			$resp['status'] = 'success';
 			if(empty($id))
@@ -763,6 +805,58 @@ Class Master extends DBConnection {
 			$this->settings->set_flashdata('success',$resp['msg']);
 			return json_encode($resp);
 	}
+	// function save_alurdo(){
+	// 	extract($_POST);
+	// 	$data = "";
+		
+	// 	foreach($_POST as $k =>$v){
+	// 		if(!in_array($k,array('id'))){
+	// 			if(!empty($data)) $data .=","; 
+	// 			$v = htmlspecialchars($this->conn->real_escape_string($v));
+	// 			$data .= " `{$k}`='{$v}' ";
+				
+	// 		}
+	// 	}
+		
+
+	// 	$check = $this->conn->query("SELECT * FROM `alur_do` where `project_do` = '{$project_do}' and delete_flag = 0 ".(!empty($id) ? " and id != {$id} " : "")." ")->num_rows;
+	// 	if($this->capture_err())
+	// 		return $this->capture_err();
+		
+	// 	if($check > 0){
+	// 		$resp['status'] = 'failed';
+	// 		$resp['msg'] = "Alur DO already exists.";
+	// 		return json_encode($resp);
+	// 		exit;
+	// 	}
+	// 	if(empty($id)){
+	// 		$sql = "INSERT INTO `alur_do` set {$data} ";
+			
+	// 		$id_proj = $this->conn->insert_id;
+	// 	}else{
+	// 		$sql = "UPDATE `alur_do` set {$data} where id = '{$id}' ";
+	// 	}
+	// 		$save = $this->conn->query($sql);
+	// 	if($save /*&& $save2*/){
+	// 		$id = !empty($id) ? $id : $this->conn->insert_id;
+	// 		$sql2 = "INSERT INTO `historydo` set id='$id', {$data} ";
+	// 		$save2 = $this->conn->query($sql2);
+	// 		if($save2){
+	// 		}
+		
+	// 		$resp['status'] = 'success';
+	// 		if(empty($id))
+	// 			$resp['msg'] = "New Project List successfully saved.";
+	// 		else
+	// 			$resp['msg'] = " Project List successfully updated.";
+	// 	}else{
+	// 		$resp['status'] = 'failed';
+	// 		$resp['err'] = $this->conn->error."[{$sql}]";
+	// 	}
+	// 	if($resp['status'] == 'success')
+	// 		$this->settings->set_flashdata('success',$resp['msg']);
+	// 		return json_encode($resp);
+	// }
 	function delete_item_alur_do(){
 		extract($_POST);
 		$del = $this->conn->query("UPDATE `alur_do` set `delete_flag` = 1 where id = '{$id}'");
@@ -978,7 +1072,7 @@ switch ($action) {
 	case 'save_satuanteknis':
 		echo $Master->save_satuanteknis();
 	break;
-	case 'save_satuanteknis':
+	case 'save_alurdo':
 		echo $Master->save_alurdo();
 	break;
 

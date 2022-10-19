@@ -72,8 +72,9 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<div class="form-group">
 			<label for="status" class="control-label">BAPL</label>
 			<select name="bapl" id="bapl" class="form-control form-control-sm rounded-0" required="required">
-				<option value="1" <?= isset($bapl) && $bapl == 1 ? 'selected' : '' ?>>ADA</option>
+				
 				<option value="0" <?= isset($bapl) && $bapl == 0 ? 'selected' : '' ?>>TIDAK ADA</option>
+				<option value="1" <?= isset($bapl) && $bapl == 1 ? 'selected' : '' ?>>ADA</option>
 			</select>
 		</div>
 
@@ -82,8 +83,9 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<div class="form-group">
 			<label for="status" class="control-label">BAPP</label>
 			<select name="bapp" id="bapp" class="form-control form-control-sm rounded-0" required="required">
-				<option value="1" <?= isset($bapp) && $bapp == 1 ? 'selected' : '' ?>>ADA</option>
+				
 				<option value="0" <?= isset($bapp) && $bapp == 0 ? 'selected' : '' ?>>TIDAK ADA</option>
+				<option value="1" <?= isset($bapp) && $bapp == 1 ? 'selected' : '' ?>>ADA</option>
 			</select>
 		</div>
 
@@ -92,8 +94,9 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		<div class="form-group">
 			<label for="ba_eval" class="control-label">BA EVAL</label>
 			<select name="ba_eval" id="ba_eval" class="form-control form-control-sm rounded-0" required="required">
-				<option value="1" <?= isset($ba_eval) && $ba_eval == 1 ? 'selected' : '' ?>>ADA</option>
+				
 				<option value="0" <?= isset($ba_eval) && $ba_eval == 0 ? 'selected' : '' ?>>TIDAK ADA</option>
+				<option value="1" <?= isset($ba_eval) && $ba_eval == 1 ? 'selected' : '' ?>>ADA</option>
 			</select>
 		</div>
 
